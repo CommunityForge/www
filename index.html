@@ -1,0 +1,36 @@
+---
+title: Home
+---
+
+<html>
+  <head>
+    {% include styles.html %}
+  </head>
+  <body>
+    {% include nav.html %}
+    <section id="landing-img" class="hero">
+      <!-- TODO: find a good image for this -->
+      <img src="{{ site.url }}/assets/img/jstown.jpg" alt="Johnstown Elementary"/>
+      {% include tenants.html %}
+    </section>
+    <section id="introduction" class="section">
+      <p class="title">Community Forge</p>
+      <div class="container">
+        <div class="content">
+          {% capture introduction %}{% include introduction.md %}{% endcapture %}
+          {{ introduction | markdownify }}
+        </div>
+      </div>
+    </section>
+    <hr>
+    <section id="offerings" class="section is-primary">
+      <p class="title">Services</p>
+      <div class="columns">
+        <div class="column">{% include offerings/classes.html %}</div>
+        <div class="column">{% include offerings/coworking.html %}</div>
+        <div class="column">{% include offerings/events.html %}</div>
+      </div>
+    </section>
+    {% include footer.html %}
+  </body>
+</html>
