@@ -8,7 +8,7 @@ title: Home
   </head>
   <body>
     {% include nav.html %}
-    <section class="hero is-fullheight">
+    <section class="hero is-large">
       <!-- TODO: find a good image for this -->
       <div class="hero-body">
       </div>
@@ -16,9 +16,47 @@ title: Home
     </section>
     <section id="introduction" class="section">
       <div class="container">
-        <div class="content">
-          {% capture introduction %}{% include introduction.md %}{% endcapture %}
-          {{ introduction | markdownify }}
+         <div class="columns has-text-centered">
+          <div class="column has-text-centered">
+            <p class="sm-label">Follow Us</p>
+          </div>
+
+        </div>
+        <div class="columns media-icons">
+          
+          <!-- this twitter handle is too long. we'll need to do something else -->
+
+          <div class="column"></div>
+            <div class="column has-text-centered">
+
+              <a class="sm-item" href="{{ site.social.facebook }}" test="https://www.facebook.com/Community-Forge-127388431195568" target="_blank">
+              <span class="icon is-large">
+                <i class="fa fa-facebook"></i>
+              </span>
+              </a>
+              <a class="sm-item" href="{{ site.social.twitter }}" target="_blank">
+                <span class="icon is-large">
+                  <i class="fa fa-twitter"></i>
+                </span>
+              </a>
+              <a class="sm-item" href="{{ site.social.instagram }}" target="_blank">
+                <span class="icon is-large">
+                  <i class="fa fa-instagram"></i>
+                </span>
+              </a>
+              <a class="sm-item" href="{{ site.social.github }}" target="_blank">
+                <span class="icon is-large">
+                  <i class="fa fa-github"></i>
+                </span>
+              </a>
+             </div>
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column is-10 is-offset-1 content landing-text has-text-centered">
+            {% capture introduction %}{% include introduction.md %}{% endcapture %}
+            {{ introduction | markdownify }}
+          </div>
         </div>
       </div>
     </section>
