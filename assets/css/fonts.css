@@ -1,0 +1,8 @@
+@font-face {
+  font-family: atlCruise;
+  src: url("/assets/fonts/atlantic_cruise/343788_0_0.woff");
+}
+
+.atlcruise {
+  font-family: atlCruise;
+}
