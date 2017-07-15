@@ -16,7 +16,6 @@ title: Home
     <section id="introduction" class="section">
       <div class="container">
         <p class="title">Community Forge</p>
-        <p class="sub-title">Test</p>
         <div class="content">
           {% capture introduction %}{% include introduction.md %}{% endcapture %}
           {{ introduction | markdownify }}
@@ -25,7 +24,6 @@ title: Home
     </section>
     <hr>
     <section id="offerings" class="section is-primary">
-      <p class="title">Services</p>
       <div class="columns">
         <div class="column">{% include offerings/classes.html %}</div>
         <div class="column">{% include offerings/coworking.html %}</div>
