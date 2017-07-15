@@ -1,4 +1,28 @@
-theme: jekyll-theme-cayman
 title: Community Forge, LLC
-description: Grow an inclusive Community Center dedicated to supporting Wilkinsburg by cultivating Arts, Civic Engagement, Athletics, Education, and mission-driven Small Business.
+email: admin@forge.community
+description: Build an inclusive Community Center dedicated to supporting Wilkinsburg by cultivating Arts, Civic Engagement, Athletics, Education, and mission-driven Small Business.
+url: "http://forge.community"
 show_downloads: false
+
+# Build settings
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+defaults:
+  scope:
+    path: "assets/img"
+  values:
+    image: true
+
+# Variables
+social:
+  twitter: "https://twitter.com/CommunityForgePGH"
+  instagram: "https://www.instagram.com/communityforge/"
+  facebook: "https://www.facebook.com/Community-Forge-127388431195568"
+  github: "https://github.com/communityforge"
