@@ -1,0 +1,50 @@
+<form action="https://formspree.io/{{ site.email }}" method="POST">>
+  <div class="field">
+    <label class="label">Name</label>
+    <p class="control has-icons-left">
+      <input class="input" type="text" placeholder="Joe Smith" name="name">
+      <span class="icon is-small is-left">
+        <i class="fa fa-user"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <label class="label">Organization</label>
+    <p class="control has-icons-left has-icons-right">
+      <input class="input" type="text" placeholder="Acme" name="name">
+      <span class="icon is-small is-left">
+        <i class="fa fa-users"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <label class="label">Email</label>
+    <p class="control has-icons-left has-icons-right">
+      <input class="input" type="text" placeholder="name@mail.com" name="name">
+      <span class="icon is-small is-left">
+        <i class="fa fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fa fa-warning"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <label class="label">Message</label>
+    <p class="control">
+      <textarea class="textarea" placeholder="Textarea"></textarea>
+    </p>
+  </div>
+
+  <div class="field is-grouped">
+    <p class="control">
+      <button class="button is-primary">Submit</button>
+    </p>
+    <p class="control">
+      <button class="button is-link">Cancel</button>
+    </p>
+  </div>
+</form>
