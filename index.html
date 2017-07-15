@@ -14,8 +14,9 @@ title: Home
       {% include tenants.html %}
     </section>
     <section id="introduction" class="section">
-      <p class="title">Community Forge</p>
       <div class="container">
+        <p class="title">Community Forge</p>
+        <p class="sub-title">Test</p>
         <div class="content">
           {% capture introduction %}{% include introduction.md %}{% endcapture %}
           {{ introduction | markdownify }}
