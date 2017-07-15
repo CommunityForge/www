@@ -8,14 +8,14 @@ title: Home
   </head>
   <body>
     {% include nav.html %}
-    <section id="landing-img" class="hero">
+    <section class="hero is-fullheight">
       <!-- TODO: find a good image for this -->
-      <img src="{{ site.url }}/assets/img/jstown.jpg" alt="Johnstown Elementary"/>
-      {% include tenants.html %}
+      <div class="hero-body">
+      </div>
+
     </section>
     <section id="introduction" class="section">
       <div class="container">
-        <p class="title atlCruise">Community Forge</p>
         <div class="content">
           {% capture introduction %}{% include introduction.md %}{% endcapture %}
           {{ introduction | markdownify }}
