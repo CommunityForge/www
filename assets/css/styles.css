@@ -1,8 +1,7 @@
-body:after {
-  display: none;
-  content: url('/assets/img/GitHub-Mark-Light-32px.png') url('/assets/img/GitHub-Mark-32px.png');
+.hero-header {
+    color: #FBCE65;
+    font-size: 4em;
+    font-family: Helvetica;
+    text-shadow: 2px 2px #000000;
 }
 
-#ghub:hover {
-  content: url('/assets/img/GitHub-Mark-Light-32px.png');
-}
