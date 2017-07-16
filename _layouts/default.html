@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/styles.css" />
+    <meta name="description" content="{{site.description}}"/>
+    <meta name="author" content="{{site.author}}"/>
+    <link rel="author" href="humans.txt"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{site.baseurl}}/feed.xml" />
+    {% include common/styles.html %}
+  </head>
+  <body>
+    {% include common/nav.html %}
+    {{ content }}
+    {% include common/footer.html %}
+    <script src="{{ site.url }}/assets/js/enable-nav.js"></script>
+  </body>
+</html>

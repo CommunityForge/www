@@ -1,0 +1,10 @@
+<section id="introduction" class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-9 is-offset-1 content">
+        {% capture content %}{% include index/introduction-content.md %}{% endcapture %}
+        {{ content | markdownify }}
+      </div>
+    </div>
+  </div>
+</section>

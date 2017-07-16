@@ -1,4 +1,4 @@
-#### A Community Space Located At 1256 Franklin Ave. in Wilkinsburg, PA
+### A Community Space Located At 1256 Franklin Ave. in Wilkinsburg, PA
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis
 et tellus sit amet tristique. Praesent eget facilisis lectus. Morbi

@@ -1,37 +1,9 @@
 ---
 title: Home
+layout: default
 ---
 
-<html>
-  <head>
-    {% include styles.html %}
-  </head>
-  <body>
-    {% include nav.html %}
-    <section class="hero is-large">
-      <!-- TODO: find a good image for this -->
-      <div class="hero-body">
-      </div>
+{% include index/hero.html %}
+{% include index/introduction.html %}
+{% include index/showcase.html %}
 
-    </section>
-    <section id="introduction" class="section">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-9 is-offset-1 content">
-            {% capture introduction %}{% include introduction.md %}{% endcapture %}
-            {{ introduction | markdownify }}
-          </div>
-        </div>
-      </div>
-    </section>
-    <hr>
-    <section id="offerings" class="section is-primary">
-      <div class="columns">
-        <div class="column">{% include offerings/classes.html %}</div>
-        <div class="column">{% include offerings/coworking.html %}</div>
-        <div class="column">{% include offerings/events.html %}</div>
-      </div>
-    </section>
-    {% include footer.html %}
-  </body>
-</html>

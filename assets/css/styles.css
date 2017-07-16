@@ -1,5 +1,17 @@
 #introduction {
-    background: #AAA;
+    background: #f5f5f5;
 }
 
+a {
+  color: #4b7e87;
+}
+a:hover {
+  color: #54526d;
+}
+a:visited {
+  color: #54526d;
+}
 
+#anchor {
+  max-height: 100%;
+}
