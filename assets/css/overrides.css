@@ -10,6 +10,10 @@ a.navbar-item {
   background-color: transparent;
   color: rgba(82, 105, 109, 0.5);
 }
+a.navbar-item:visited {
+  background-color: transparent;
+  color: rgba(82, 105, 109, 0.5);
+}
 a.navbar-item:hover {
   background-color: transparent;
   color: rgba(82, 105, 109, 1);
