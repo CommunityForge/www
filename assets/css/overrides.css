@@ -9,6 +9,7 @@
 a.navbar-item {
   background-color: transparent;
   color: rgba(82, 105, 109, 0.5);
+  font-size: 1.5em;
 }
 a.navbar-item:visited {
   background-color: transparent;
@@ -17,6 +18,10 @@ a.navbar-item:visited {
 a.navbar-item:hover {
   background-color: transparent;
   color: rgba(82, 105, 109, 1);
+}
+
+.nav-item {
+  font-size: 1.5em;
 }
 
 .navbar {
@@ -37,19 +42,23 @@ a.navbar-item:hover {
 }
 
 .xmedia-icons {
-    color: white;
+    color: rgba(82, 105, 109, 0.5);
 }
 
 .xsm-item {
-    color: white;
+    color: rgba(82, 105, 109, 0.5);
+}
+
+.xsm-item:hover {
+  color: rgba(82, 105, 109, 1);
 }
 
 .xsm-label {
     font-style: italic;
     font-family: Helvetica;
     font-size: 2rem;
-    color: #FBCE65;
-}
+/*    color: #FBCE65;
+*/}
 
 .xlanding-text {
     color: white;

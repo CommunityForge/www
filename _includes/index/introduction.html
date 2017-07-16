@@ -1,10 +1,45 @@
 <section id="introduction" class="section">
   <div class="container">
     <div class="columns">
-      <div class="column is-9 is-offset-1 content">
+        <div class="column"></div>
+      <div class="column is-8 content has-text-centered">
         {% capture content %}{% include index/introduction-content.md %}{% endcapture %}
         {{ content | markdownify }}
       </div>
+      <div class="column"></div>
+    </div>
+    <div class="columns">
+        <div class="column"></div>
+      <div class="column has-text-centered">
+        <p class="xsm-label">Follow Us</p>
+      </div>
+      <div class="column"></div>
+    </div>
+    <div class="columns">
+        <div class="column"></div>
+        <div class="column has-text-centered">
+         <a class="xsm-item" href="{{ site.social.facebook }}" target="_blank">
+          <span class="icon is-large">
+            <i class="fa fa-facebook"></i>
+          </span>
+          </a>
+          <a class="xsm-item" href="{{ site.social.twitter }}" target="_blank">
+            <span class="icon is-large">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          <a class="xsm-item" href="{{ site.social.instagram }}" target="_blank">
+            <span class="icon is-large">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          <a class="xsm-item" href="{{ site.social.github }}" target="_blank">
+            <span class="icon is-large">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+        </div>
+        <div class="column"></div>
     </div>
   </div>
 </section>
