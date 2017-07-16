@@ -1,5 +1,9 @@
 #introduction {
-    background: #52696D;
+    background: #AAA;
+}
+
+.navbar {
+    background: #AAA;
 }
 
 .media-icons {
@@ -8,7 +12,6 @@
 
 .sm-item {
     color: white;
-    margin: 1em;
 }
 
 .sm-label {
