@@ -1,0 +1,7 @@
+<section id="offerings" class="section is-primary">
+  <div class="columns">
+    <div class="column">{% include offerings/classes.html %}</div>
+    <div class="column">{% include offerings/coworking.html %}</div>
+    <div class="column">{% include offerings/events.html %}</div>
+  </div>
+</section>
