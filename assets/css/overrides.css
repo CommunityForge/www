@@ -28,14 +28,6 @@ a.navbar-item:hover {
   background-color: #f5f5f5;
 }
 
-.hero {
-    background-image: url("/assets/img/jstown.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 50vh;
-    max-height: 90vh;
-}
-
 .xmedia-icons {
     color: white;
 }

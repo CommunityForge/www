@@ -1,7 +1,13 @@
-<section id="offerings" class="section is-primary">
-  <div class="columns">
-    <div class="column">{% include offerings/classes.html %}</div>
-    <div class="column">{% include offerings/coworking.html %}</div>
-    <div class="column">{% include offerings/events.html %}</div>
-  </div>
+<section id="showcase" class="section is-primary container">
+    <figure>
+      <img class="is-centered-img" src="{{ site.url }}/assets/img/cflogo-big.png"/>
+    </figure>
+    <div class="columns">
+      <div class="column">{% include offerings/mission.html %}</div>
+      <div class="column">{% include offerings/leasing-and-coworking.html %}</div>
+    </div>
+    <div class="columns">
+      <div class="column">{% include offerings/community.html %}</div>
+      <div class="column">{% include offerings/current-work.html %}</div>
+    </div>
 </section>

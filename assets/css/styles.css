@@ -15,3 +15,18 @@ a:visited {
 #anchor {
   max-height: 100%;
 }
+
+#landing-img {
+  background-image: url("/assets/img/jstown.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50vh;
+  max-height: 90vh;
+}
+
+.is-centered-img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-bottom: 15px;
+}

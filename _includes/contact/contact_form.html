@@ -1,8 +1,8 @@
-<form action="https://formspree.io/{{ site.email }}" method="POST">
+<form name="contact_form" action="https://formspree.io/{{ site.email }}" method="POST">
   <div class="field">
     <label class="label">Name</label>
     <p class="control has-icons-left">
-      <input class="input" type="text" placeholder="Joe Smith" name="name">
+      <input id="contact_name" class="input" type="text" placeholder="Joe Smith" name="name">
       <span class="icon is-small is-left">
         <i class="fa fa-user"></i>
       </span>
@@ -12,7 +12,7 @@
   <div class="field">
     <label class="label">Organization</label>
     <p class="control has-icons-left has-icons-right">
-      <input class="input" type="text" placeholder="Acme" name="organization">
+      <input id="contact_organization" class="input" type="text" placeholder="Acme" name="organization">
       <span class="icon is-small is-left">
         <i class="fa fa-users"></i>
       </span>
@@ -22,7 +22,7 @@
   <div class="field">
     <label class="label">Email</label>
     <p class="control has-icons-left has-icons-right">
-      <input class="input" type="text" placeholder="name@mail.com" name="email">
+      <input id="contact_email" class="input" type="text" placeholder="name@mail.com" name="email">
       <span class="icon is-small is-left">
         <i class="fa fa-envelope"></i>
       </span>
@@ -32,7 +32,7 @@
   <div class="field">
     <label class="label">Phone Number</label>
     <p class="control has-icons-left has-icons-right">
-      <input class="input" type="text" placeholder="412-867-5309" name="phone number">
+      <input id="contact_phone" class="input" type="text" placeholder="412-867-5309" name="phone">
       <span class="icon is-small is-left">
         <i class="fa fa-phone"></i>
       </span>
@@ -42,16 +42,47 @@
   <div class="field">
     <label class="label">Message</label>
     <p class="control">
-      <textarea class="textarea" placeholder="Dear Community Forge..." name="message"></textarea>
+      <textarea name="contact_message" class="textarea" placeholder="Dear Community Forge..." name="message"></textarea>
     </p>
   </div>
 
   <div class="field is-grouped">
     <p class="control">
-      <button class="button is-primary">Submit</button>
+      <button id="contact_submit" class="button is-primary">Submit</button>
     </p>
     <p class="control">
       <button class="button is-link">Cancel</button>
     </p>
   </div>
 </form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/validate-js/2.0.1/validate.js"
+        integrity="sha256-ZFhq0/hKyVTJY2scr4Z+5FVAxqGw7+7nawmok0u0RlE="
+        crossorigin="anonymous">
+</script>
+<script>
+  var validator = new FormValidator('contact_form', [{
+    name: 'name',
+    display: 'required',
+    rules: 'required'
+  }, {
+    name: 'email',
+    display: 'must be a valid email',
+    rules: 'required|valid_email'
+  }, {
+    name: 'phone',
+    rules: 'min_length[7]'
+  }, {
+    name: 'message',
+    display: 'required',
+    rules: 'required'
+  }, {
+    name: 'email',
+    rules: 'valid_email'
+  }], function(errors, event) {
+    if (errors.length > 0) {
+      // Show the errors
+      console.log("??", errors, event);
+      debugger;
+    }
+  });
+</script>
