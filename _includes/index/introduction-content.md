@@ -1,21 +1,17 @@
-### A Community Space Located At 1256 Franklin Ave. in Wilkinsburg, PA
+Johnston elementary school served Wilkinsburg for near a century
+before closing its doors in 2012. With its closing, a valuable
+resource was lost: beyond the direct loss of a school, the community
+meetings and political events which had used the building after the
+school day was over had to find space elsewhere if they were to continue.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis
-et tellus sit amet tristique. Praesent eget facilisis lectus. Morbi
-elementum erat quis dictum tristique. Quisque malesuada augue auctor,
-feugiat nibh vitae, elementum orci. Aenean nec blandit lectus, quis
-auctor urna. Ut dignissim lorem nec feugiat bibendum. Interdum et
-malesuada fames ac ante ipsum primis in faucibus.
-
-Morbi dictum eu est quis rutrum. Nulla eu nisi sit amet augue
-consectetur pellentesque vel vel lacus. Etiam eu velit ornare, porttitor
-turpis iaculis, faucibus sapien. Cras in est id sapien vehicula
-vestibulum et et ex. Vivamus eget sapien euismod, tincidunt nunc at,
-bibendum odio. Sed ante eros, accumsan nec eros ut, posuere condimentum
-justo. Praesent tempor neque nec est tristique consequat. Donec sodales
-arcu massa. Ut non elementum dui, eu lobortis dui. Suspendisse turpis
-lectus, facilisis ac interdum imperdiet, elementum sed nulla. Maecenas
-non sem lobortis, scelerisque diam at, interdum nibh. Etiam a ligula ut
-lacus fermentum egestas at at sapien. Vivamus a magna ac dui elementum
-efficitur quis non orci.
+Johnston elementary is not a special case. The loss of resources held in
+common (organizations, opportunities, and spaces) is, one of the great
+challenges facing cities in the 21st century. [We]({{ site.url }}/about)
+formed Community Forge in 2016 as a response to exactly this problem.
+Our goal is to bring mission-driven and socially conscious business into
+Wilkinsburg and to feed proceeds from tenancy back into Johnston
+elementary's neighborhood and the surrounding community. As Community
+Forge finds its footing within the community, we aspire to bring in
+exciting tech jobs, offer free classes, and provide recreational space
+to the citizens of Wilkinsburg.
 

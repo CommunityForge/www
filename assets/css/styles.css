@@ -3,13 +3,13 @@
 }
 
 a {
-  color: #FBCE65;
+  color: #6B1C15;
 }
 a:hover {
-  color: #6B1C15;
+  color: #FBCE65;
 }
 a:visited {
-  color: #6B1C15;
+  color: #FBCE65;
 }
 
 #anchor {
@@ -29,4 +29,23 @@ a:visited {
   margin-right: auto;
   display: block;
   padding-bottom: 15px;
+}
+
+.social-media {
+  text-align: center
+}
+
+.social-media a {
+  background-color: transparent;
+  color: rgba(82, 105, 109, 0.5);
+}
+
+.social-media a:visited {
+  background-color: transparent;
+  color: rgba(82, 105, 109, 1);
+}
+
+.social-media a:hover {
+  background-color: transparent;
+  color: rgba(82, 105, 109, 1);
 }
