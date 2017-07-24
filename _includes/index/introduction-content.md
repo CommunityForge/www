@@ -1,17 +1,7 @@
-Johnston elementary school served Wilkinsburg for near a century
-before closing its doors in 2012. With its closing, a valuable
-resource was lost: beyond the direct loss of a school, the community
-meetings and political events which had used the building after the
-school day was over had to find space elsewhere if they were to continue.
+Together, we are working to transform the Johnston Elementary School into a community space for opportunities in Wilkinsburg.
 
-Johnston elementary is not a special case. The loss of resources held in
-common (organizations, opportunities, and spaces) is, one of the great
-challenges facing cities in the 21st century. [We]({{ site.url }}/about)
-formed Community Forge in 2016 as a response to exactly this problem.
-Our goal is to bring mission-driven and socially conscious business into
-Wilkinsburg and to feed proceeds from tenancy back into Johnston
-elementary's neighborhood and the surrounding community. As Community
-Forge finds its footing within the community, we aspire to bring in
-exciting tech jobs, offer free classes, and provide recreational space
-to the citizens of Wilkinsburg.
+In 2012, Johnston Elementary closed its doors after serving Wilkinsburg for nearly a century.  With that closing, the city lost a valuable resource.  Beyond acting as a center for education, Johnston Elementary housed community meetings and political events and was a source of energy for the neighborhood. We formed Community Forge in 2016 with the vision of bringing that energy back. Our goal is to attract mission-driven and socially-conscious businesses, events, and partners into Wilkinsburg.  We aim to use proceeds from tenancy to beautify the property, open public recreational spaces, and offer educational programs.
+
+We are just beginning now, and if you’d like join us in the space or learn more, please reach out at Hello@Forge.Community
+
 
