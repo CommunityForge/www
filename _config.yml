@@ -10,7 +10,7 @@ markdown: kramdown
 kramdown:
   parse_block_html: true
 theme: minima
-gems:
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
