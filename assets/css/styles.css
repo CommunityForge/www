@@ -35,6 +35,10 @@ a:visited {
   text-align: center
 }
 
+.align_center {
+    text-align: center;
+}
+
 .social-media a {
   background-color: transparent;
   color: rgba(82, 105, 109, 0.5);
