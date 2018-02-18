@@ -3,7 +3,6 @@ title: "Press"
 layout: default
 ---
 
-{% include index/hero.html %}
 <section id="press-release" class="section">
   <div class="container">
     {% include common/social.html %}
@@ -11,14 +10,24 @@ layout: default
     <h3 class="subtitle">News and announcements for immediate release</h3>
     <hr>
     <div class="columns">
-      <div class="column is-9 is-offset-1 content">
-        {% for release in site.posts %}
-          {% if release.category contains 'release' %}
+      <div class="column is-11 is-offset-1 content">
+        {% for post in site.tags['press'] %}
+          {% if post.pdf %}
             <article class="media">
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <a href="{{ site.url }}/assets/pdf/{{ release.pdf }}">{{ release.title }}</a> - {{ release.date | date_to_string }}
+                    <a href="{{ site.url }}/assets/pdf/{{ post.pdf }}">{{ post.title }}</a> - {{ post.date | date_to_string }}
+                  </p>
+                </div>
+              </div>
+            </article>
+          {% else %}
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string }}
                   </p>
                 </div>
               </div>

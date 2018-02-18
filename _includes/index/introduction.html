@@ -1,12 +1,11 @@
 <section id="introduction" class="section">
   <div class="container">
-    {% include common/social.html %}
     <br>
-    <div class="columns">
-      <div class="column is-9 is-offset-1 content">
+    <article class='message'>
+        <div class='message-body'>
         {% capture content %}{% include index/introduction-content.md %}{% endcapture %}
         {{ content | markdownify }}
       </div>
-    </div>
+    </article>
   </div>
 </section>

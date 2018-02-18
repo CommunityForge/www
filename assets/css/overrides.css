@@ -6,6 +6,10 @@
   background-color: rgb(82, 105, 109);
 }
 
+.navbar-title {
+    font-family: atlCruiseBold;
+}
+
 a.navbar-item {
   background-color: transparent;
   color: rgba(82, 105, 109, 0.5);
@@ -19,9 +23,8 @@ a.navbar-item:hover {
   color: rgba(82, 105, 109, 1);
 }
 
-.navbar {
+.navbarMenu {
   height: 3.5rem;
-  font-family: atlCruiseBold;
 
   border-bottom: #52696d 3px;
   border-bottom-style: solid;

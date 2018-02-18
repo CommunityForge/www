@@ -1,15 +1,27 @@
+.fade {
+    opacity: 0.25;
+    filter: blur(2px);
+}
+
+.cfcontent {
+    max-width: 75%;
+    margin: auto;
+    display: block;
+    padding-top: 50px;
+}
+
 #introduction {
   background: #F5F5F5;
 }
 
 a {
-  color: #6B1C15;
-}
-a:hover {
-  color: #FBCE65;
+  color: rgba(82, 105, 109, 0.5);
 }
 a:visited {
-  color: #FBCE65;
+  color: rgba(82, 105, 109, 0.5);
+}
+a:hover {
+  color: rgba(82, 105, 109, 1);
 }
 
 #anchor {
@@ -20,8 +32,8 @@ a:visited {
   background-image: url("/assets/img/jston-front.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 50vh;
-  max-height: 90vh;
+  min-height: 10vh;
+  max-height: 30vh;
 }
 
 .is-centered-img {
