@@ -8,6 +8,7 @@
 
 .navbar-title {
     font-family: atlCruiseBold;
+    font-size: 9vmin;
 }
 
 a.navbar-item {
@@ -24,6 +25,7 @@ a.navbar-item:hover {
 }
 
 .navbarMenu {
+  font-size: 3vmin;
   height: 3.5rem;
 
   border-bottom: #52696d 3px;
