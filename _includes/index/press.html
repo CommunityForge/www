@@ -1,0 +1,28 @@
+{% if site.tags['press'] %}
+  <h1 class='title'>Press</h1>
+  <div class='columns is-multiline is-desktop'>
+      {% for post in site.tags['press'] %}
+          <div class="card column">
+            <header class="card-header">
+              <p class="card-header-title">
+                  {% if post.pdf %}
+                      <a href="{{ site.url }}/assets/pdf/{{ post.pdf }}">{{ post.title }}</a>
+                  {% else %}
+                      <a href="{{post.url}}">{{ post.title }}</a>
+                  {% endif %}
+              </p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                {% if post.content %}
+                  {{ post.content | strip_html | truncatewords:24 }}
+                  <br>
+                {% endif %}
+                <time datetime="{{ post.date}}">{{ post.date | date_to_string }}</time>
+              </div>
+            </div>
+          </div>
+      {% endfor %}
+  </div>
+{% endif %}
+
