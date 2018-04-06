@@ -1,8 +1,6 @@
 Our Mission is to: *Provide value and create opportunities for the people of Wilkinsburg and surrounding areas.*
 
-We plan to do this through *inclusive programming* designed to showcase the
-community and residents, while *providing opportunities* for growth and
-advancement for local entrepreneurs, artists, and makers.
+We plan to do this through *inclusive programming* designed to showcase the community and residents, while *providing opportunities* for growth and advancement for local entrepreneurs, artists, and makers.
 
 Community Forge programming and events will focus on:
 
@@ -11,8 +9,7 @@ Community Forge programming and events will focus on:
 - Health & Wellness 
 - Civics & Entrepreneurship 
 
-Community Forge is focused on making our events and programming accessible for
-Wilkinsburg Residents. 
+Community Forge is focused on making our events and programming accessible for Wilkinsburg Residents. 
 
 ### For those in the Wilkinsburg area:
 
