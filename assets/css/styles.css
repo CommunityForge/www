@@ -3,13 +3,6 @@
     filter: blur(2px);
 }
 
-.cfcontent {
-    max-width: 75%;
-    margin: auto;
-    display: block;
-    padding-top: 50px;
-}
-
 #introduction {
   background: #F5F5F5;
 }
@@ -69,4 +62,24 @@ a:hover {
 .social-media a:hover {
   background-color: transparent;
   color: rgba(82, 105, 109, 1);
+}
+
+/* https://thomas.vanhoutte.be/miniblog/make-google-calendar-iframe-responsive */
+.is-responsive-iframe {
+    position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
+}
+
+.is-responsive-iframe iframe {
+    position: absolute; top:0; left: 0; width: 100%; height: 100%;
+}
+
+.is-fullheight {
+    height: 100%;
+}
+
+.main-content {
+    max-width: 75%;
+    margin: auto;
+    display: block;
+    padding-top: 50px;
 }

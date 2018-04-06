@@ -3,13 +3,17 @@ title: "About"
 layout: default
 ---
 
-<h1 class="title">Mission</h1>
-<p>
-    {% capture content %}{% include index/mission.md %}{% endcapture %}
-    {{ content | markdownify }}
-</p>
-
-<h1 class="title">Us</h1>
-<p>
-  The founders of Community Forge are Mike, Jackie, Coop, Nick, Magdalene, Nathan, Justin, Ariel, and Micha. We are nine young adults with roots in Pittsburgh, including alumni from Carnegie Mellon and the University of Pittsburgh. Our backgrounds range widely from PhD Scientists to Educators to Extreme Sports athletes. At least one of us is always at the school, so if you’d like to say hello in person, come on by 1256 Franklin Avenue, Wilkinsburg, PA 15221.
-</p>
+<section class='section'>
+    <h1 class="title">Mission</h1>
+    <p>
+        {% capture content %}{% include index/mission.md %}{% endcapture %}
+        {{ content | markdownify }}
+    </p>
+</section
+    
+<section class='section'>
+    <h1 class="title">Us</h1>
+    <p>
+      The founders of Community Forge are Mike, Jackie, Coop, Nick, Magdalene, Nathan, Justin, Ariel, and Micha. We are nine young adults with roots in Pittsburgh, including alumni from Carnegie Mellon and the University of Pittsburgh. Our backgrounds range widely from PhD Scientists to Educators to Extreme Sports athletes. At least one of us is always at the school, so if you’d like to say hello in person, come on by 1256 Franklin Avenue, Wilkinsburg, PA 15221.
+    </p>
+</section

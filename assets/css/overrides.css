@@ -1,4 +1,4 @@
-.button.is-primary {
+dbutton.is-primary {
   background-color: #4b7e87;
 }
 
@@ -53,3 +53,6 @@ a.navbar-item:hover {
     font-size: 1.5rem;
 }
 
+.container {
+    width: 100%;
+}

@@ -1,6 +1,8 @@
-<article class='message'>
-    <div class='message-body'>
-    {% capture content %}{% include index/introduction-content.md %}{% endcapture %}
-    {{ content | markdownify }}
-  </div>
-</article>
+<section class='section'>
+    <article class='message'>
+        <div class='message-body'>
+        {% capture content %}{% include index/introduction-content.md %}{% endcapture %}
+        {{ content | markdownify }}
+      </div>
+    </article>
+</section>

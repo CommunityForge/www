@@ -1,5 +1,4 @@
-Our Mission is to: *Provide value and create opportunities for the people of
-Wilkinsburg and surrounding areas.*
+Our Mission is to: *Provide value and create opportunities for the people of Wilkinsburg and surrounding areas.*
 
 We plan to do this through *inclusive programming* designed to showcase the
 community and residents, while *providing opportunities* for growth and
