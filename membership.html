@@ -1,0 +1,148 @@
+---
+title: "Home"
+layout: default
+---
+
+
+<div class="modal" id=error_modal>
+  <div class="modal-background modal-closer"></div>
+  <div class="modal-content">
+    <div class="notification is-danger" id=error_explanation>
+    </div>
+  </div>
+  <button class="modal-close modal-closer is-large" aria-label="close"></button>
+</div>
+
+<section class='section'>
+  <form method='GET' action='{{ site.stripe_webtask }}/stripe-payment/payment'>
+    <input type=hidden name=stripeToken>
+    <div class="field is-narrow">
+        <label class="label">Planning Committee</label>
+        <div class="control">
+          <div class="select">
+            <select name='metadata["planning_committee"]'>
+              <option>Justice</option>
+              <option>Arts</option>
+              <option>Education</option>
+              <option>Business</option>
+              <option>Community Development</option>
+              <option>None</option>
+            </select>
+          </div>
+        </div>
+        <p class="help">Pick a subject you'd like to help Community Forge plan for</p>
+    </div>
+
+    <div class="field is-narrow">
+        <label class="label">T-Shirt Size</label>
+        <div class="control">
+          <div class="select">
+            <select name='metadata["tshirt_size"]'>
+              <option>XS</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+              <option>None</option>
+            </select>
+          </div>
+        </div>
+    </div>
+
+    <div class="field is-narrow">
+        <label class="label">Ideal Use of Funds</label>
+        <div class="control">
+          <div class="select">
+            <select name='metadata["use_of_funds"]'>
+              <option>Free Events/Programming</option>
+              <option>Subsidies for Community Organizations</option>
+              <option>Building Beautification</option>
+              <option>Operations</option>
+            </select>
+          </div>
+        </div>
+        <p class="help">Give us an idea of how you'd like this money to be spent</p>
+    </div>
+
+    <label class="label">Donation Amount</label>
+    <div class="field has-addons">
+        <div class="control has-icons-left">
+            <input id='amount' class="input" name='amount' type="text" placeholder="Donation Amount">
+            <span class="icon is-small is-left">
+                <i class="fas fa-dollar-sign"></i>
+            </span>
+        </div>
+        <div class="control">
+          <div class="select">
+            <select id='reocurring' name='reocurring'>
+              <option value='true'>Monthly</option>
+              <option value='false'>One Time</option>
+            </select>
+          </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <button id=donateButton class="button is-primary">
+            Become a Member!
+        </button>
+    </div>
+  </form>
+</section>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+var handler = StripeCheckout.configure({
+  key: '{{ site.stripe_public_token }}',
+  locale: 'auto',
+  name: 'Community Forge Membership',
+  token: function(token) {
+    $('input#stripeToken').val(token.id);
+    $('form').submit();
+  }
+});
+
+function defer(method) {
+    if (window.jQuery) {
+        method();
+    } else {
+        setTimeout(function() { defer(method) }, 50);
+    }
+}
+
+defer(function() {
+    $(".modal-closer").click(function() {
+       $("#error_modal").removeClass("is-active");
+    });
+
+    $('#donateButton').on('click', function(e) {
+
+      e.preventDefault();
+    
+      $('#error_explanation').html('');
+    
+      var amount = $('input#amount').val();
+      amount = amount.replace(/\$/g, '').replace(/\,/g, '');
+      amount = parseFloat(amount);
+      var reocurring = ($('select#reocurring').val() == 'true');
+
+      var yearly_amount = (reocurring * 11 + 1) * amount;
+    
+      if (isNaN(amount)) {
+        $('#error_explanation').html('<p>Please enter a valid amount in USD ($).</p>');
+        $('#error_modal').addClass('is-active');
+      }
+      else if (yearly_amount < 50.00) {
+        $('#error_explanation').html('<p>Donation amount must be at least $50 annually.</p>');
+        $('#error_modal').addClass('is-active');
+      }
+      else {
+        amount = amount * 100; // Needs to be an integer!
+        handler.open({
+          amount: Math.round(amount),
+          panelLabel: '\{\{amount\}\}' + ((reocurring) ? ' per month' : '')
+        })
+      }
+    })
+});
+</script>

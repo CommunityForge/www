@@ -5,6 +5,7 @@ url: "http://www.forge.community"
 show_downloads: false
 phone: 608-886-2295
 
+
 # Build settings
 markdown: kramdown
 kramdown:
@@ -22,6 +23,7 @@ defaults:
     image: true
 
 # Variables
+stripe_webtask: https://wt-d2fef378aa30e9cc2a4cb3d8a0afe350-0.run.webtask.io
 social:
   twitter: "https://twitter.com/CommForgePGH"
   instagram: "https://www.instagram.com/communityforge/"
