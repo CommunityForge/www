@@ -7,7 +7,7 @@ layout: default
 <div class="modal" id=error_modal>
   <div class="modal-background modal-closer"></div>
   <div class="modal-content">
-    <div class="notification is-danger" id=error_explanation>
+    <div class="notification" id=error_explanation>
     </div>
   </div>
   <button class="modal-close modal-closer is-large" aria-label="close"></button>
@@ -15,7 +15,7 @@ layout: default
 
 <section class='section'>
   <h1 class='title'>Become a Member</h1>
-  <form id=mbs method='GET' action='{{ site.stripe_webtask }}/stripe-payment/payment'>
+  <form id=mbs>
     <input type=hidden name=stripeToken id=stripeToken>
     <input type=hidden name=stripeMetadata id=stripeMetadata>
     <input type=hidden name=email id=email>
@@ -25,7 +25,7 @@ layout: default
         <label class="label">Planning Committee</label>
         <div class="control">
           <div class="select">
-            <select name='metadata["planning_committee"]'>
+            <select name='metadata[planning_committee]'>
               <option>Justice</option>
               <option>Arts</option>
               <option>Education</option>
@@ -42,13 +42,13 @@ layout: default
         <label class="label">T-Shirt Size</label>
         <div class="control">
           <div class="select">
-            <select name='metadata["tshirt_size"]'>
+            <select name='metadata[tshirt_size]'>
               <option>XS</option>
               <option>S</option>
               <option>M</option>
               <option>L</option>
               <option>XL</option>
-              <option>None</option>
+              <option value=false>None</option>
             </select>
           </div>
         </div>
@@ -58,7 +58,7 @@ layout: default
         <label class="label">Ideal Use of Funds</label>
         <div class="control">
           <div class="select">
-            <select name='metadata["use_of_funds"]'>
+            <select name='metadata[use_of_funds]'>
               <option>Free Events/Programming</option>
               <option>Subsidies for Community Organizations</option>
               <option>Building Beautification</option>
@@ -108,13 +108,39 @@ var handler = StripeCheckout.configure({
   token: function(token, meta) {
     $('#mbs input#stripeToken').val(token.id);
     $('#mbs input#email').val(token.email);
-    $('#mbs input#stripeMetadata').val(meta);
-    $('#mbs').submit();
+    $('#mbs input#stripeMetadata').val(JSON.stringify(meta));
+    url = '{{ site.stripe_webtask }}/stripe-payment/payment';
+
+    $('#error_explanation').html('<h1>Processing Order</h1><p><a class="button is-primary is-loading">Loading</a></p>')
+    $('#error_modal').addClass('is-info');
+    $('#error_modal').addClass('is-active');
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: $("#mbs").serialize(), // serializes the form's elements.
+        success: function(data) {
+            if (data.statusCode === undefined) {
+                $('#error_explanation').html('<p>Order Complete!</p>');
+                $('#error_modal').addClass('is-success');
+            } else {
+                $('#error_explanation').html('<h1>Error</h1><p>' + data.message + '</p>');
+                $('#error_modal').addClass('is-danger');
+            }
+            $('#error_modal').addClass('is-active');
+        },
+        error: function(data) {
+            $('#error_explanation').html('<h1>Error</h1><p>' + data + '</p>');
+            $('#error_modal').addClass('is-danger');
+            $('#error_modal').addClass('is-active');
+        }
+    });
   }
 });
 
 $(".modal-closer").click(function() {
    $("#error_modal").removeClass("is-active");
+   $("#error_modal").removeClass("is-danger");
+   $("#error_modal").removeClass("is-success");
 });
 
 $('#getMembership').on('click', function(e) {
@@ -128,10 +154,12 @@ $('#getMembership').on('click', function(e) {
 
   if (isNaN(amount)) {
     $('#error_explanation').html('<p>Please enter a valid amount in USD ($).</p>');
+    $('#error_modal').addClass('is-danger');
     $('#error_modal').addClass('is-active');
   }
   else if (yearly_amount < 50.00) {
     $('#error_explanation').html('<p>Donation amount must be at least $50 annually.</p>');
+    $('#error_modal').addClass('is-danger');
     $('#error_modal').addClass('is-active');
   }
   else {

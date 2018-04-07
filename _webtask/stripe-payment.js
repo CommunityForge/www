@@ -6,67 +6,103 @@ import bodyParser from 'body-parser';
 import stripe from 'stripe';
 
 var app = express();
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({
+  extended: true,
+}));
 
-function extend(obj, src) {
-    for (var key in src) {
-        if (src.hasOwnProperty(key)) obj[key] = src[key];
+var preprocess_membership = function(res, args) {
+    var params = {
+        reocurring: (args.reocurring == 'true'),
+        amount: (+args.amount) * 100,
+        description: args.description,
+        productId: args.productId,
+    };
+    try {
+        var stripeMeta = JSON.parse(args.stripeMetadata);
+    } catch(e) {
+        res.json({
+            statusCode: 400,
+            message: "Invalid request, please try again or contact the website owner: " + e,
+        })
+        return null
     }
-    return obj;
+    var meta = Object.assign(args.metadata, stripeMeta);
+    if (meta.tshirt_size == 'false') {
+        meta.tshirt_size = null;
+    }
+    params['meta'] = meta;
+
+    if ((!params.reocurring &&    params.amount < 5000) || 
+        ( params.reocurring && 12*params.amount < 5000)) {
+        res.json({
+            statusCode: 400,
+            message: 'You must donate more than $50 annually to become a member'
+        });
+        return null;
+    }
+    return params;
 }
 
-app.get('/payment',  (req,res) => {
-  var ctx = req.webtaskContext;
-  var STRIPE_SECRET_KEY = ctx.secrets.STRIPE_SECRET_KEY;
-  var reocurring = (req.query.reocurring == 'true');
-  var amount = (+req.query.amount) * 100;
-  var productId = req.query.productId;
-  var meta = extend(req.query.metadata, req.query.stripeMetadata);
-  console.log(req.query.metadata);
-  console.log(req.query.stripeMetadata);
-  console.log(amount);
-  console.log(productId);
-  var description = req.query.description;
-  if ((!reocurring && amount < 5000) || 
-      (reocurring && 12*amount < 5000)) {
-        return res.end('You must donate more than $50 annually to become a member');
-  }
+var preprocess = {
+    'prod_CdNNverDybFRU1': preprocess_membership,
+}
 
-  var _stripe = stripe(STRIPE_SECRET_KEY);
-  _stripe.customers.create({
-    email: req.query.email,
-    source: req.query.stripeToken,
-    metadata: meta,
-  }).then(customer => {
-    console.log(customer);
-    if (reocurring) {
-      _stripe.plans.create({
-        product: productId,
-        currency: 'usd',
-        interval: 'month',
-        nickname: description,
-        amount: amount,
-      }).then(plan => {
-        console.log(plan);
-        _stripe.subscriptions.create({
-          customer: customer.id,
-          items: [{plan: plan.id}],
-        }).then(subscription => {
-          console.log(subscription);
-          return res.json(subscription);
-        });
-      });
-    } else {
-      _stripe.charges.create({
-        amount: amount,
-        currency: 'usd',
-        customer: customer.id,
-        description: description,
-      }).then(charge => {
-        return res.json(charge);
-      });
-    }
-  });
+app.post('/payment',    (req,res) => {
+    var ctx = req.webtaskContext;
+    var STRIPE_SECRET_KEY = ctx.secrets.STRIPE_SECRET_KEY;
+    var args = req.body;
+    var params = preprocess[req.body.productId](res, req.body)
+    if (params === null) { return }
+
+    var _stripe = stripe(STRIPE_SECRET_KEY);
+    _stripe.customers.create({
+        email: params.email,
+        source: params.stripeToken,
+        metadata: params.meta,
+    }).catch(e => {
+        res.json(e);
+        return null;
+    }).then(customer => {
+        if (customer === null) { return null; }
+        if (params.reocurring) {
+            _stripe.plans.create({
+                product: params.productId,
+                currency: 'usd',
+                interval: 'month',
+                nickname: params.description,
+                amount: params.amount,
+            }).catch(e => {
+                res.json(e);
+                return null;
+            }).then(plan => {
+                if (plan === null) { return null; }
+                _stripe.subscriptions.create({
+                    customer: customer.id,
+                    items: [{plan: plan.id}],
+                }).catch(e => {
+                    res.json(e);
+                    return null;
+                }).then(subscription => {
+                    if (subscription === null) { return null; }
+                    res.json(subscription);
+                    return 
+                });
+            });
+        } else {
+            _stripe.charges.create({
+                amount: params.amount,
+                currency: 'usd',
+                customer: customer.id,
+                description: params.description,
+            }).catch(e => {
+                res.json(e);
+                return null;
+            }).then(charge => {
+                if (charge === null) { return null; }
+                return res.json(charge);
+            });
+        }
+    });
 });
 
 module.exports = fromExpress(app);
