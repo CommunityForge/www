@@ -1,0 +1,23 @@
+<div class="modal" id=modal-main>
+  <div class="modal-background modal-closer"></div>
+  <div class="modal-content">
+    <div class="notification" id=modal-message>
+    </div>
+  </div>
+  <button class="modal-close modal-closer is-large" aria-label="close"></button>
+</div>
+
+<script>
+$(".modal-closer").click(function() {
+   $("#modal-main").removeClass("is-active");
+   $("#modal-message").removeClass();
+});
+
+function notify_modal(message, state) {
+    var state = state || 'is-info';
+    $('#modal-message').html(message);
+    $('#modal-message').addClass('notification');
+    $('#modal-message').addClass(state);
+    $('#modal-main').addClass('is-active');
+}
+</script>
