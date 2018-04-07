@@ -8,10 +8,6 @@ layout: default
 <section class='section'>
   <h1 class='title'>Become a Member</h1>
   <form id=mbs>
-    <input type=hidden name=stripeToken id=stripeToken>
-    <input type=hidden name=stripeMetadata id=stripeMetadata>
-    <input type=hidden name=email id=email>
-    <input type=hidden name=description value='Community Forge Membership'>
     <input type=hidden name=productId value='prod_CdNNverDybFRU1'>
     <div class="field is-narrow">
         <label class="label">Planning Committee</label>
@@ -80,7 +76,7 @@ layout: default
     </div>
 
     <div class="field">
-        <button id=getMembership class="button is-primary">
+        <button type=submit id=getMembership class="button is-primary">
             Become a Member!
         </button>
     </div>
@@ -88,61 +84,28 @@ layout: default
 </section>
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
+<script src="{{ '/assets/js/checkout.js' | relative_url }}"></script>
 
 <script>
-var handler = StripeCheckout.configure({
-    key: '{{ site.stripe_public_token }}',
-    locale: 'auto',
-    name: 'Community Forge Membership',
-    shippingAddress: true,
-    billingAddress: true,
-    zipCode: true,
-    token: function(token, meta) {
-        $('#mbs input#stripeToken').val(token.id);
-        $('#mbs input#email').val(token.email);
-        $('#mbs input#stripeMetadata').val(JSON.stringify(meta));
-        url = '{{ site.stripe_webtask }}/stripe-payment/payment';
-
-        notify_modal('<h1>Processing Order</h1><p><a class="button is-primary is-loading">Loading</a></p>')
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $("#mbs").serialize(), // serializes the form's elements.
-                success: function(data) {
-                    if (data.statusCode === undefined) {
-                        notify_modal('<p>Order Complete!</p>', 'is-success');
-                    } else {
-                        notify_modal('<h1>Error</h1><p>' + data.message + '</p>', 'is-danger');
-                    }
-                },
-                error: function(data) {
-                    notify_modal('<h1>Error</h1><p>' + data + '</p>', 'is-danger');
-                }
-            });
-    }
-});
-
-$('#getMembership').on('click', function(e) {
-    e.preventDefault();
-    var amount = $('#mbs input#amount').val();
-    amount = amount.replace(/\$/g, '').replace(/\,/g, '');
-    amount = parseFloat(amount);
-    var reocurring = ($('#mbs select#reocurring').val() == 'true');
-
+function validate(form, amount) {
+    var reocurring = (form.find('select#reocurring').val() == 'true');
     var yearly_amount = (reocurring * 11 + 1) * amount;
-
-    if (isNaN(amount)) {
-        notify-modal('<p>Please enter a valid amount in USD ($).</p>', 'is-danger');
-    }
-    else if (yearly_amount < 50.00) {
+    if (yearly_amount < 50) {
         notify_modal('<p>Donation amount must be at least $50 annually.</p>', 'is-danger');
+        return false;
     }
-    else {
-        amount = amount * 100; // Needs to be an integer!
-        handler.open({
-            amount: Math.round(amount),
-            panelLabel: '\{\{amount\}\}' + ((reocurring) ? ' per month' : '')
-        })
-    }
+    return true;
+}
+    
+attachCheckout({
+    $('#mbs'),
+    'Community Forge Membership',
+    '{{ site.stripe_public_token }}',
+    '{{ site.stripe_webtask }}/stripe-payment/payment',
+    {
+        shippingAddress: true,
+        billingAddress: true,
+    },
+    validate
 })
 </script>
