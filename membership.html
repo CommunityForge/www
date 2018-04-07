@@ -14,8 +14,13 @@ layout: default
 </div>
 
 <section class='section'>
-  <form method='GET' action='{{ site.stripe_webtask }}/stripe-payment/payment'>
-    <input type=hidden name=stripeToken>
+  <h1 class='title'>Become a Member</h1>
+  <form id=mbs method='GET' action='{{ site.stripe_webtask }}/stripe-payment/payment'>
+    <input type=hidden name=stripeToken id=stripeToken>
+    <input type=hidden name=stripeMetadata id=stripeToken>
+    <input type=hidden name=email id=email>
+    <input type=hidden name=description value='Community Forge Membership'>
+    <input type=hidden name=productId value='prod_CdNNverDybFRU1'>
     <div class="field is-narrow">
         <label class="label">Planning Committee</label>
         <div class="control">
@@ -83,7 +88,7 @@ layout: default
     </div>
 
     <div class="field">
-        <button id=donateButton class="button is-primary">
+        <button id=getMembership class="button is-primary">
             Become a Member!
         </button>
     </div>
@@ -91,58 +96,51 @@ layout: default
 </section>
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
+
 <script>
 var handler = StripeCheckout.configure({
   key: '{{ site.stripe_public_token }}',
   locale: 'auto',
   name: 'Community Forge Membership',
+  shippingAddress: true,
+  billingAddress: true,
+  zipCode: true,
   token: function(token) {
-    $('input#stripeToken').val(token.id);
-    $('form').submit();
+    $('#mbs input#stripeToken').val(token.id);
+    $('#mbs input#email').val(token.email);
+    $('#mbs input#stripeMetadata').val(token.meta);
+    $('#mbs').submit();
   }
 });
 
-function defer(method) {
-    if (window.jQuery) {
-        method();
-    } else {
-        setTimeout(function() { defer(method) }, 50);
-    }
-}
-
-defer(function() {
-    $(".modal-closer").click(function() {
-       $("#error_modal").removeClass("is-active");
-    });
-
-    $('#donateButton').on('click', function(e) {
-
-      e.preventDefault();
-    
-      $('#error_explanation').html('');
-    
-      var amount = $('input#amount').val();
-      amount = amount.replace(/\$/g, '').replace(/\,/g, '');
-      amount = parseFloat(amount);
-      var reocurring = ($('select#reocurring').val() == 'true');
-
-      var yearly_amount = (reocurring * 11 + 1) * amount;
-    
-      if (isNaN(amount)) {
-        $('#error_explanation').html('<p>Please enter a valid amount in USD ($).</p>');
-        $('#error_modal').addClass('is-active');
-      }
-      else if (yearly_amount < 50.00) {
-        $('#error_explanation').html('<p>Donation amount must be at least $50 annually.</p>');
-        $('#error_modal').addClass('is-active');
-      }
-      else {
-        amount = amount * 100; // Needs to be an integer!
-        handler.open({
-          amount: Math.round(amount),
-          panelLabel: '\{\{amount\}\}' + ((reocurring) ? ' per month' : '')
-        })
-      }
-    })
+$(".modal-closer").click(function() {
+   $("#error_modal").removeClass("is-active");
 });
+
+$('#getMembership').on('click', function(e) {
+  e.preventDefault();
+  var amount = $('#mbs input#amount').val();
+  amount = amount.replace(/\$/g, '').replace(/\,/g, '');
+  amount = parseFloat(amount);
+  var reocurring = ($('#mbs select#reocurring').val() == 'true');
+
+  var yearly_amount = (reocurring * 11 + 1) * amount;
+
+  if (isNaN(amount)) {
+    $('#error_explanation').html('<p>Please enter a valid amount in USD ($).</p>');
+    $('#error_modal').addClass('is-active');
+  }
+  else if (yearly_amount < 50.00) {
+    $('#error_explanation').html('<p>Donation amount must be at least $50 annually.</p>');
+    $('#error_modal').addClass('is-active');
+  }
+  else {
+    amount = amount * 100; // Needs to be an integer!
+    handler.open({
+      amount: Math.round(amount),
+      panelLabel: '\{\{amount\}\}' + ((reocurring) ? ' per month' : '')
+    })
+  }
+})
+
 </script>

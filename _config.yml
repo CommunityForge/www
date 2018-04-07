@@ -24,6 +24,8 @@ defaults:
 
 # Variables
 stripe_webtask: https://wt-d2fef378aa30e9cc2a4cb3d8a0afe350-0.run.webtask.io
+stripe_public_token: pk_test_O1UeXIayquxnAnenantgT8Ml
+
 social:
   twitter: "https://twitter.com/CommForgePGH"
   instagram: "https://www.instagram.com/communityforge/"
