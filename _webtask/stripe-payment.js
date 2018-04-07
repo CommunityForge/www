@@ -10,13 +10,19 @@ app.use(bodyParser.urlencoded({
   extended: true,
 }));
 
-var preprocess_membership = function(res, args) {
-    var params = {
+function base_preprocess(args) {
+    return {
         reocurring: (args.reocurring == 'true'),
         amount: (+args.amount) * 100,
         description: args.description,
         productId: args.productId,
     };
+}
+
+var product_preprocess = {};
+
+product_preprocess['prod_CdNNverDybFRU1'] = function(res, args) {
+    var params = base_preprocess(args);
     try {
         var stripeMeta = JSON.parse(args.stripeMetadata);
     } catch(e) {
@@ -43,15 +49,12 @@ var preprocess_membership = function(res, args) {
     return params;
 }
 
-var preprocess = {
-    'prod_CdNNverDybFRU1': preprocess_membership,
-}
 
 app.post('/payment',    (req,res) => {
     var ctx = req.webtaskContext;
     var STRIPE_SECRET_KEY = ctx.secrets.STRIPE_SECRET_KEY;
     var args = req.body;
-    var params = preprocess[req.body.productId](res, req.body)
+    var params = product_preprocess[req.body.productId](res, req.body)
     if (params === null) { return }
 
     var _stripe = stripe(STRIPE_SECRET_KEY);
