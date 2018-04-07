@@ -17,7 +17,7 @@ layout: default
   <h1 class='title'>Become a Member</h1>
   <form id=mbs method='GET' action='{{ site.stripe_webtask }}/stripe-payment/payment'>
     <input type=hidden name=stripeToken id=stripeToken>
-    <input type=hidden name=stripeMetadata id=stripeToken>
+    <input type=hidden name=stripeMetadata id=stripeMetadata>
     <input type=hidden name=email id=email>
     <input type=hidden name=description value='Community Forge Membership'>
     <input type=hidden name=productId value='prod_CdNNverDybFRU1'>
@@ -105,10 +105,10 @@ var handler = StripeCheckout.configure({
   shippingAddress: true,
   billingAddress: true,
   zipCode: true,
-  token: function(token) {
+  token: function(token, meta) {
     $('#mbs input#stripeToken').val(token.id);
     $('#mbs input#email').val(token.email);
-    $('#mbs input#stripeMetadata').val(token.meta);
+    $('#mbs input#stripeMetadata').val(meta);
     $('#mbs').submit();
   }
 });
