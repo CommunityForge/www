@@ -1,90 +1,91 @@
 ---
-title: "Home"
+title: "Get Membership"
 layout: default
 ---
 
-{% include common/notification_modal.html %}
-
 <section class='section'>
-  <h1 class='title'>Become a Member</h1>
-  <form id=mbs>
-    <input type=hidden name=productId value='prod_CdNNverDybFRU1'>
-    <div class="field is-narrow">
-        <label class="label">Planning Committee</label>
-        <div class="control">
-          <div class="select">
-            <select name='metadata[planning_committee]'>
-              <option>Justice</option>
-              <option>Arts</option>
-              <option>Education</option>
-              <option>Business</option>
-              <option>Community Development</option>
-              <option>None</option>
-            </select>
-          </div>
+    <h1 class='title'>Become a Member</h1>
+    <div class='columns'>
+        <div class='column'>
+            Becomming a member is your way of contributing to the community focused mission of Community Forge. For a cost of $50/year or more, we will put you on a planning committee of your choice where you can help make decisions that steer the organization in the right direction. We'll also take input as to how we should spend your donation and send you a t-shirt that you can show off to your friends and family!
         </div>
-        <p class="help">Pick a subject you'd like to help Community Forge plan for</p>
-    </div>
+        <div class='column'>
+            <form id=mbs>
+                <input type=hidden name=productId value='prod_CdNNverDybFRU1'>
+                <div class="field is-narrow">
+                    <label class="label">Planning Committee</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name='metadata[planning_committee]'>
+                                <option>Justice</option>
+                                <option>Arts</option>
+                                <option>Education</option>
+                                <option>Business</option>
+                                <option>Community Development</option>
+                                <option>None</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="help">Pick a subject you'd like to help Community Forge plan for</p>
+                </div>
 
-    <div class="field is-narrow">
-        <label class="label">T-Shirt Size</label>
-        <div class="control">
-          <div class="select">
-            <select name='metadata[tshirt_size]'>
-              <option>XS</option>
-              <option>S</option>
-              <option>M</option>
-              <option>L</option>
-              <option>XL</option>
-              <option value=false>None</option>
-            </select>
-          </div>
-        </div>
-    </div>
+                <div class="field is-narrow">
+                    <label class="label">T-Shirt Size</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name='metadata[tshirt_size]'>
+                                <option>XS</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                                <option value=false>None</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="field is-narrow">
-        <label class="label">Ideal Use of Funds</label>
-        <div class="control">
-          <div class="select">
-            <select name='metadata[use_of_funds]'>
-              <option>Free Events/Programming</option>
-              <option>Subsidies for Community Organizations</option>
-              <option>Building Beautification</option>
-              <option>Operations</option>
-            </select>
-          </div>
-        </div>
-        <p class="help">Give us an idea of how you'd like this money to be spent</p>
-    </div>
+                <div class="field is-narrow">
+                    <label class="label">Ideal Use of Funds</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name='metadata[use_of_funds]'>
+                                <option>Free Events/Programming</option>
+                                <option>Subsidies for Community Organizations</option>
+                                <option>Building Beautification</option>
+                                <option>Operations</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="help">Give us an idea of how you'd like this money to be spent</p>
+                </div>
 
-    <label class="label">Donation Amount</label>
-    <div class="field has-addons">
-        <div class="control has-icons-left">
-            <input id='amount' class="input" name='amount' type="text" placeholder="Donation Amount">
-            <span class="icon is-small is-left">
-                <i class="fas fa-dollar-sign"></i>
-            </span>
-        </div>
-        <div class="control">
-          <div class="select">
-            <select id='reocurring' name='reocurring'>
-              <option value='true'>Monthly</option>
-              <option value='false'>One Time</option>
-            </select>
-          </div>
-        </div>
-    </div>
+                <label class="label">Donation Amount</label>
+                <div class="field has-addons">
+                    <div class="control has-icons-left">
+                        <input id='amount' class="input" name='amount' type="text" placeholder="Donation Amount">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-dollar-sign"></i>
+                        </span>
+                    </div>
+                    <div class="control">
+                        <div class="select">
+                            <select id='reocurring' name='reocurring'>
+                                <option value='true'>Monthly</option>
+                                <option value='false'>One Time</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="field">
-        <button type=submit id=getMembership class="button is-primary">
-            Become a Member!
-        </button>
-    </div>
-  </form>
+                <div class="field">
+                    <button type=submit id=getMembership class="button is-primary">
+                        Become a Member!
+                    </button>
+                </div>
+            </form>
+        </div>
 </section>
-
-<script src="https://checkout.stripe.com/checkout.js"></script>
-<script src="{{ '/assets/js/checkout.js' | relative_url }}"></script>
 
 <script>
 function validate(form, amount) {
@@ -97,15 +98,15 @@ function validate(form, amount) {
     return true;
 }
     
-attachCheckout({
+attachCheckout(
     $('#mbs'),
     'Community Forge Membership',
-    '{{ site.stripe_public_token }}',
+    validate,
     '{{ site.stripe_webtask }}/stripe-payment/payment',
     {
+        key: '{{ site.stripe_public_token }}',
         shippingAddress: true,
         billingAddress: true,
     },
-    validate
-})
+)
 </script>

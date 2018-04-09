@@ -34,11 +34,18 @@ a:hover {
   max-height: 30vh;
 }
 
+.is-centered-form {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom: 15px;
+}
+
 .is-centered-img {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom: 15px;
 }
 
 .social-media {

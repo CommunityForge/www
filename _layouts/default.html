@@ -10,6 +10,11 @@
     <link rel="author" href="humans.txt"/>
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{site.baseurl}}/feed.xml" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ '/assets/js/enable-nav.js' | relative_url }}"></script>
+
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="{{ '/assets/js/checkout.js' | relative_url }}"></script>
+
     {% include common/styles.html %}
     {% include common/favicon.html %}
   </head>
@@ -18,9 +23,12 @@
     {% include index/hero.html %}
     <div class='main-content content'>
         {{ content }}
+
+        {% include index/donate.html %}
     </div>
-    {% include index/donate.html %}
     {% include common/footer.html %}
+    {% include common/notification_modal.html %}
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   </body>

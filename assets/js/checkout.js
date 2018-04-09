@@ -31,10 +31,9 @@ function _addHidden(form, name, value) {
     }).appendTo(form);
 }
 
-function attachCheckout(form, product_name, stripe_public_token, checkout_url, checkout_cfg, validation) {
-    checkout_cfg = {} || checkout_cfg;
+function attachCheckout(form, product_name, validation, checkout_url, checkout_cfg) {
+    checkout_cfg = checkout_cfg || {};
     default_cfg = {
-        key: stripe_public_token,
         locale: 'auto',
         name: product_name,
         zipCode: true,
@@ -48,14 +47,15 @@ function attachCheckout(form, product_name, stripe_public_token, checkout_url, c
         var amount = form.find('input#amount').val();
         amount = amount.replace(/\$/g, '').replace(/\,/g, '');
         amount = parseFloat(amount);
+        var reocurring = (form.find('select#reocurring').val() == 'true');
 
         if (isNaN(amount)) {
-            notify-modal('<p>Please enter a valid amount in USD ($).</p>', 'is-danger');
+            notify_modal('<p>Please enter a valid amount in USD ($).</p>', 'is-danger');
         } else if (validate !== undefined && validate(form, amount)) {
             amount = amount * 100;
             handler.open({
                 amount: Math.round(amount),
-                panelLabel: '\{\{amount\}\}' + ((reocurring) ? ' per month' : '')
+                panelLabel: 'Pay \{\{amount\}\}' + ((reocurring) ? ' per month' : '')
             })
         }
     })

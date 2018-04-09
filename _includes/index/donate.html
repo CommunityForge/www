@@ -1,12 +1,47 @@
-<section id="showcase" class="section is-primary container">
-    <div class="columns">
-        <div class="column">
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="NNN3288QTB5RL">
-            <input class="is-centered-img" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>  
+<hr>
+<section class='section'>
+  <h1 class='title is-4'>Donate Today</h1>
+  <form id=form-donate class='is-centered-form'>
+    <input type=hidden name=productId value='prod_CdNNverDybFRU1'>
+    <div class="field has-addons">
+        <div class="field-body">
+            <div class="control has-icons-left">
+                <input id='amount' class="input" name='amount' type="text" placeholder="Donation Amount">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-dollar-sign"></i>
+                </span>
+            </div>
+            <div class="control">
+              <div class="select">
+                <select id='reocurring' name='reocurring'>
+                  <option value='true'>Monthly</option>
+                  <option value='false'>One Time</option>
+                </select>
+              </div>
+            </div>
+            <div class="control">
+                <button type=submit class="button is-primary">
+                    Donate!
+                </button>
+            </div>
         </div>
     </div>
+  </form>
 </section>
+
+<script>
+function validate(form, amount) {
+    return true;
+}
+    
+attachCheckout(
+    $('#form-donate'),
+    'Donate to Community Forge',
+    validate,
+    '{{ site.stripe_webtask }}/stripe-payment/payment',
+    {
+        key: '{{ site.stripe_public_token }}',
+    },
+)
+</script>
+
