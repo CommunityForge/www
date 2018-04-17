@@ -21,10 +21,10 @@ function base_preprocess(args) {
 
 var product_preprocess = {};
 
-product_preprocess['prod_CdNNverDybFRU1'] = function(res, args) {
+product_preprocess['prod_ChLIFCpTiz59TQ'] = function(res, args) {
     var params = base_preprocess(args);
     try {
-        var stripeMeta = JSON.parse(args.stripeMetadata);
+        var stripeMeta = JSON.parse(args.stripeMetadata || '{}');
     } catch(e) {
         res.json({
             statusCode: 400,
@@ -47,6 +47,10 @@ product_preprocess['prod_CdNNverDybFRU1'] = function(res, args) {
         return null;
     }
     return params;
+}
+
+product_preprocess['prod_ChLH0CqLNzANNR'] = function(res, args) {
+    return base_preprocess(args);
 }
 
 

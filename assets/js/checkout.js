@@ -1,5 +1,6 @@
 function _handleToken(form, url) {
     return function(token, meta) {
+        form.find('.checkout_autoadd').remove()
         _addHidden(form, 'stripeToken', token.id);
         _addHidden(form, 'email', token.email);
         _addHidden(form, 'stripeMetadata', JSON.stringify(meta));
@@ -26,6 +27,7 @@ function _handleToken(form, url) {
 function _addHidden(form, name, value) {
     $('<input>').attr({
         type: 'hidden',
+        class: 'checkout_autoadd',
         name: name,
         value: value,
     }).appendTo(form);
