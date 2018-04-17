@@ -5,7 +5,7 @@ layout: default
 
 <section class='section'>
     <h1 class='title'>Become a Member</h1>
-    <div class='columns'>
+    <div class='columns is-multiline is-desktop'>
         <div class='column'>
             Sustaining a community center takes a village. To serve our youth, families, artists, local businesses, and to offer our space as a facility for social action and community togetherness, your financial support is needed. Consider becoming a member and your dollars go directly to supporting free community programming, subsidizing community service organizations, and beautifying our grounds for all to enjoy. 
             With a minimum contribution of $50/year, we start by delivering you a t-shirt and a membership card to welcome you to the family. You then have the opportunity to join one of our planning committees where you can help make decisions that steer our organization and improve our positive impact. Community Forge is committed to creating inclusive opportunities for Wilkinsburg and to bringing together caring individuals and families across our region -- please get involved today and become a member.
@@ -62,7 +62,8 @@ layout: default
                 <label class="label">Donation Amount</label>
                 <div class="field has-addons">
                     <div class="control has-icons-left">
-                        <input id='amount' class="input" name='amount' type="text" placeholder="Donation Amount">
+                        <input id='amount' class="input" name='amount' type="text"
+                               placeholder="Donation Amount">
                         <span class="icon is-small is-left">
                             <i class="fas fa-dollar-sign"></i>
                         </span>
@@ -77,6 +78,20 @@ layout: default
                     </div>
                 </div>
 
+                <div class="field is-horizontal">
+                    <label class='label'>Are you a Wilkinsburg resident?</label>
+                    <select class="select" name='wilkinsburg'>
+                        <option value='true'>Yes</option>
+                        <option value='false'>No</option>
+                    </select>
+                </div>
+
+                <div class="field is-narrow">
+                    <input type='text' class='input' name='interest'
+                           placeholder="Industry/Occupation/Interests">
+                </div>
+
+                <label class='label'>About you</label>
                 <div class="field">
                     <button type=submit id=getMembership class="button is-primary">
                         Become a Member!
