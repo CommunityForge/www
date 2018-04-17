@@ -1,5 +1,5 @@
 ---
-title: A vacant school becomes Wilkinsburg's community center for education and civic action
+title: NEXTpittsburg - A vacant school becomes Wilkinsburg's community center for education and civic action
 tag: press
 ---
 
