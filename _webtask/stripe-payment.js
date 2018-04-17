@@ -25,7 +25,7 @@ function base_preprocess(args) {
         amount: (+args.amount) * 100,
         description: args.description,
         productId: args.productId,
-        stripeToken: args.stripeToken,
+        source: args.stripeToken,
         email: args.email,
         meta: meta,
     };
@@ -61,17 +61,16 @@ function find_or_create_customer(_stripe, params) {
         email: params.email
     }).then(customers => {
         if (customers.data.length) {
-            console.log(customers);
             var customer = customers.data[0];
             var meta = Object.assign(params.meta, customer.metadata);
             return _stripe.customers.update(customer.id, {
-                source: params.stripeToken,
+                source: params.source,
                 metadata: meta
             });
         } else {
             return _stripe.customers.create({
                 email: params.email,
-                source: params.stripeToken,
+                source: params.source,
                 metadata: params.meta,
             });
         }
@@ -89,14 +88,12 @@ app.post('/payment',    (req,res) => {
     var _stripe = stripe(STRIPE_SECRET_KEY);
     find_or_create_customer(_stripe, {
         email: params.email,
-        source: params.stripeToken,
-        metadata: params.meta,
+        source: params.source,
+        meta: params.meta,
     }).catch(e => {
         res.json(e);
-        return null;
+        return Promise.reject(e);
     }).then(customer => {
-        console.log("customer");
-        console.log(customer);
         if (customer === null) { return null; }
         if (params.reocurring) {
             _stripe.plans.create({
@@ -107,7 +104,7 @@ app.post('/payment',    (req,res) => {
                 amount: params.amount,
             }).catch(e => {
                 res.json(e);
-                return null;
+                return Promise.reject(e);
             }).then(plan => {
                 if (plan === null) { return null; }
                 _stripe.subscriptions.create({
@@ -115,7 +112,7 @@ app.post('/payment',    (req,res) => {
                     items: [{plan: plan.id}],
                 }).catch(e => {
                     res.json(e);
-                    return null;
+                    return Promise.reject(e);
                 }).then(subscription => {
                     if (subscription === null) { return null; }
                     res.json(subscription);
@@ -130,7 +127,7 @@ app.post('/payment',    (req,res) => {
                 description: params.description,
             }).catch(e => {
                 res.json(e);
-                return null;
+                return Promise.reject(e);
             }).then(charge => {
                 if (charge === null) { return null; }
                 return res.json(charge);
