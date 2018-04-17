@@ -11,20 +11,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 function base_preprocess(args) {
-    return {
-        reocurring: (args.reocurring == 'true'),
-        amount: (+args.amount) * 100,
-        description: args.description,
-        productId: args.productId,
-    };
-}
-
-var product_preprocess = {};
-
-product_preprocess['prod_ChLIFCpTiz59TQ'] = function(res, args) {
-    var params = base_preprocess(args);
     try {
-        var stripeMeta = JSON.parse(args.stripeMetadata || '{}');
+        var meta = JSON.parse(args.stripeMetadata || '{}');
     } catch(e) {
         res.json({
             statusCode: 400,
@@ -32,7 +20,22 @@ product_preprocess['prod_ChLIFCpTiz59TQ'] = function(res, args) {
         })
         return null
     }
-    var meta = Object.assign(args.metadata, stripeMeta);
+    return {
+        reocurring: (args.reocurring == 'true'),
+        amount: (+args.amount) * 100,
+        description: args.description,
+        productId: args.productId,
+        stripeToken: args.stripeToken,
+        email: args.email,
+        meta: meta,
+    };
+}
+
+var product_preprocess = {};
+
+product_preprocess['prod_ChLIFCpTiz59TQ'] = function(res, args) {
+    var params = base_preprocess(args);
+    var meta = Object.assign(params.meta, args.metadata);
     if (meta.tshirt_size == 'false') {
         meta.tshirt_size = null;
     }
@@ -53,6 +56,28 @@ product_preprocess['prod_ChLH0CqLNzANNR'] = function(res, args) {
     return base_preprocess(args);
 }
 
+function find_or_create_customer(_stripe, params) {
+    return _stripe.customers.list({
+        email: params.email
+    }).then(customers => {
+        if (customers.data.length) {
+            console.log(customers);
+            var customer = customers.data[0];
+            var meta = Object.assign(params.meta, customer.metadata);
+            return _stripe.customers.update(customer.id, {
+                source: params.stripeToken,
+                metadata: meta
+            });
+        } else {
+            return _stripe.customers.create({
+                email: params.email,
+                source: params.stripeToken,
+                metadata: params.meta,
+            });
+        }
+    })
+}
+
 
 app.post('/payment',    (req,res) => {
     var ctx = req.webtaskContext;
@@ -62,7 +87,7 @@ app.post('/payment',    (req,res) => {
     if (params === null) { return }
 
     var _stripe = stripe(STRIPE_SECRET_KEY);
-    _stripe.customers.create({
+    find_or_create_customer(_stripe, {
         email: params.email,
         source: params.stripeToken,
         metadata: params.meta,
@@ -70,6 +95,8 @@ app.post('/payment',    (req,res) => {
         res.json(e);
         return null;
     }).then(customer => {
+        console.log("customer");
+        console.log(customer);
         if (customer === null) { return null; }
         if (params.reocurring) {
             _stripe.plans.create({
