@@ -23,7 +23,7 @@ defaults:
     image: true
 
 # Variables
-stripe_webtask: https://wt-d2fef378aa30e9cc2a4cb3d8a0afe350-0.run.webtask.io
+stripe_webtask: https://wt-d2fef378aa30e9cc2a4cb3d8a0afe350-0.sandbox.auth0-extend.com
 stripe_public_token: pk_live_BcilKUB2Nk1jlsGfKwuENGqC
 
 social:
