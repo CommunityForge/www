@@ -4,7 +4,10 @@ tag: news
 permalink: ActivateTheArts18
 ---
 
-[Submit your application here!](https://goo.gl/forms/Fi4n9Xhtue8zm3fG2)
+<br/>
+<h4>
+[Be sure to submit your application here!](https://goo.gl/forms/Fi4n9Xhtue8zm3fG2)
+</h4>
 
 ### Community Forge - ACTIVATE THE ARTS seeks to 
 
@@ -32,3 +35,4 @@ permalink: ActivateTheArts18
 - November - Final Artist Showcase
 
 [MORE INFORMATION HERE](https://docs.google.com/document/d/1oQHtC5T7fAuAJ8Yr_EKau34XXZmc63F1al9H0WwkggM/edit?usp=sharing)
+
