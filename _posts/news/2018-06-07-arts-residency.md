@@ -4,6 +4,8 @@ tag: news
 permalink: ActivateTheArts18
 ---
 
+####[Submit your application here!](https://goo.gl/forms/Fi4n9Xhtue8zm3fG2)
+
 ### Community Forge - ACTIVATE THE ARTS seeks to 
 
 - Establish a stronger relationship with the artist community 
