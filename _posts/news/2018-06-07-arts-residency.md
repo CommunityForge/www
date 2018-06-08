@@ -1,7 +1,7 @@
 ---
 title: ACTIVATE THE ARTS Residency
 tag: news
-permalink: tktktkt
+permalink: tktktktkt
 ---
 
 ### Community Forge - ACTIVATE THE ARTS seeks to 
