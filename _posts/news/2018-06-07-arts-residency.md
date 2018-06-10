@@ -5,7 +5,7 @@ permalink: ActivateTheArts18
 ---
 
 <br/>
-<h4>
+<h4 class="bright-link">
 [Be sure to submit your application here!](https://goo.gl/forms/Fi4n9Xhtue8zm3fG2)
 </h4>
 
