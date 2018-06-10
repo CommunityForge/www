@@ -90,6 +90,11 @@ a:hover {
     padding-top: 50px;
 }
 
-.bright-link {
-    color: #fbce65;
+.bright-link a{
+    color:
+}
+
+.bright-link a:hover {
+  color: #fbce65;
+  opacity: 0.5;
 }
