@@ -89,3 +89,7 @@ a:hover {
     display: block;
     padding-top: 50px;
 }
+
+.bright-link {
+    color: #fbce65;
+}
