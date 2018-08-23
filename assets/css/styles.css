@@ -1,0 +1,313 @@
+.fade {
+    opacity: 0.25;
+    filter: blur(2px);
+}
+
+#introduction {
+  background: #F5F5F5;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+p {
+    text-align: left;
+    text-justify: auto;
+}
+
+a {
+  color: rgba(82, 105, 109, 0.5);
+}
+a:visited {
+  color: rgba(82, 105, 109, 0.5);
+}
+a:hover {
+  color: rgba(82, 105, 109, 1);
+}
+
+#anchor {
+  max-height: 100%;
+}
+
+#landing-img {
+  background-image: url("/assets/img/jston-front.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 10vh;
+  max-height: 30vh;
+}
+
+.is-centered-form {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.is-centered-img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom: 15px;
+}
+
+.social-media {
+  text-align: center
+}
+
+.align_center {
+    text-align: center;
+}
+
+.social-media a {
+  background-color: transparent;
+  color: rgba(82, 105, 109, 0.5);
+}
+
+.social-media a:visited {
+  background-color: transparent;
+  color: rgba(82, 105, 109, 1);
+}
+
+.social-media a:hover {
+  background-color: transparent;
+  color: rgba(82, 105, 109, 1);
+}
+
+/* https://thomas.vanhoutte.be/miniblog/make-google-calendar-iframe-responsive */
+.is-responsive-iframe {
+    position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
+}
+
+.is-responsive-iframe iframe {
+    position: absolute; top:0; left: 0; width: 100%; height: 100%;
+}
+
+.is-fullheight {
+    height: 100%;
+}
+/*
+.main-content {
+    max-width: 75%;
+    margin: auto;
+    display: block;
+    padding-top: 50px;
+} */
+
+.bright-link a{
+    color: #fbce65;
+}
+
+.bright-link a:hover {
+  color: #fbce65;
+  opacity: 0.5;
+}
+
+hr.shorty{
+  border: solid .5px;
+  border-color:#FBCE65;
+  margin-left:auto;
+  margin-right:auto;
+  width: 33%;
+}
+
+.title-head{
+  margin-bottom:25px;
+  font-family: atlCruiseBold;
+  font-size: 3em;
+  color: inherit;
+}
+.title-head.is-medium{
+  font-size: 2em;
+}
+.header-parallax{
+  padding: 0;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#header-home {
+  background: url('/assets/img/jston-front.jpg') no-repeat;
+  background-size: cover;
+}
+#header-1 {
+  background: url('/assets/img/header/cf-atrium.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#header-2 {
+  background: url('/assets/img/header/cf-room.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#header-3 {
+  background: url('/assets/img/header/cf-room2.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.header-bg {
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  top: auto;
+  z-index: 1;
+  opacity: 1;
+}
+.header-content{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1140px;
+  position: relative;
+  z-index: 2;
+}
+.parallax-bg {
+  background: url('/assets/img/cf-room2.jpg') no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 140%;
+  top: 0;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+#header-text {
+  /* offset header text for navbar */
+  margin-top: 52px;
+}
+
+.lightwidget-widget {
+  max-height: 200px;
+}
+#video-section {
+  width: 100%;
+  min-height: 400px;
+  background: #52696D;
+  background-image: url('/assets/img/bg_buildings_1.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+  color: #AEC2C6;
+  padding:50px 0;
+}
+.video-tile{
+  padding: 0 25px;
+}
+#getinvolved_section {
+  width: 100%;
+  padding:50px 0;
+}
+.getinvolved-tile{
+  padding: 0 25px;
+}
+#upcomingevent_section {
+  width: 100%;
+  min-height: 400px;
+  background: #52696D;
+  background-image: url('/assets/img/bg_buildings_1.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right bottom;
+  color: #AEC2C6;
+}
+#press-section {
+  padding: 50px 0;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.press-title {
+  text-align: left;
+  text-justify: inter-word;
+  color: #4a4a4a;
+}
+.press-date {
+  color: #4a4a4a;
+}
+#reports-section{
+  width: 100%;
+  align-content: center;
+  background: #FBCE65;
+  color: #FFFFFF;
+}
+#social-section  {
+  width: 100%;
+  padding: 25px;
+  align-content: center;
+}
+#donate-section {
+  width: 100%;
+  align-content: center;
+  background: #FBCE65;
+  color: #FFFFFF;
+}
+#form-donate {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#footer-section {
+  width: 100%;
+  min-height: 400px;
+  background: #52696D;
+  background-image: url('/assets/img/bg_buildings_1.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left bottom;
+  color: #AEC2C6;
+}
+#contact-form {
+  max-width: 50%;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+#ourteam-section {
+  width: 100%;
+  background: #52696D;
+  background-image: url('/assets/img/bg_buildings_1.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right bottom;
+  color: #AEC2C6;
+}
+.ourteam-tile{
+  padding: 25px;
+}
+.is-rounded{
+  border-radius: 50%;
+}
+.image-link{
+  position: relative;
+  background-color:#FBCE65;
+}
+.image-link img{
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.image-link-overlay {
+transition: .5s ease;
+opacity: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+text-align: center;
+}
+.image-link:hover img{
+  opacity: 0.2;
+}
+.image-link:hover .image-link-overlay{
+  opacity: 1;
+}

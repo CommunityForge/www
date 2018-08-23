@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>{{ site.title}} {% if page.title %} | {{ page.title }}{% endif %}</title>
+    {% include common/js.html %}
+    {% include common/styles.html %}
+  </head>
+  <body>
+  {% include header.html %}
+  {{ content }}
+  {% include donate.html %}
+  {% include footer.html %}
+  <script src="/assets/js/main.js"></script>
+  </body>
+</html>

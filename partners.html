@@ -1,0 +1,34 @@
+---
+title: "Partners"
+layout: default
+tag: page-partners
+---
+
+<section class="section">
+  <div class="container">
+    <h1 class="title is-4">Become a Tenant</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique sagittis purus non efficitur. Proin vitae est leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum posuere nisi ut congue fringilla. Sed sit amet ex augue. Curabitur dignissim a velit at pulvinar. Aliquam erat volutpat. Praesent augue mi, elementum sed accumsan rhoncus, accumsan vitae velit. Donec et pretium massa.
+      Proin condimentum vel est eget pulvinar. Ut et augue at tellus tincidunt lobortis eu vel lorem. Curabitur egestas mi in consectetur ullamcorper. In hac habitasse platea dictumst. Quisque ac mattis nisi. Morbi varius magna ac rutrum elementum. Suspendisse blandit urna lectus, a pretium leo dictum non. Nulla nulla turpis, tempor id molestie id, facilisis vel massa.
+    </p>
+    <h1 class="title is-4">Run a youth program</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique sagittis purus non efficitur. Proin vitae est leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum posuere nisi ut congue fringilla. Sed sit amet ex augue. Curabitur dignissim a velit at pulvinar. Aliquam erat volutpat. Praesent augue mi, elementum sed accumsan rhoncus, accumsan vitae velit. Donec et pretium massa.
+    </p>
+
+    <h1 class="title-head has-text-centered">Current Tenants</h1>
+
+    <div class="tile is-ancestor">
+    {% for tenant in site.tags['tenant']%}
+      <div class="tile is-parent is-4 wraptile">
+        <div class="tile is-child">
+          <img src=" {{ tenant.img }}" style="width:100%;">
+          <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
+          {{ tenant.content }}
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+
+  </div>
+</section>

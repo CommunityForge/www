@@ -1,0 +1,16 @@
+---
+title: "Media"
+layout: default
+tag: page-media
+---
+<section class="section has-text-centered">
+  <div class="container">
+    <h1 class="title-head">Press</h1>
+    {% for post in site.tags['press'] %}
+      <h1 class="title is-5 press-title">{{ post.title }}</h1>
+      <time datetime="{{ post.date }}">{{ post.date | date_to_string}}</time>
+      <hr>
+    {% endfor %}
+  </div>
+</section>
+{% include social_section.html %}

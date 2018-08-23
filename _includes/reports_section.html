@@ -1,0 +1,7 @@
+<section id="reports-section" class="section is-centered-form">
+  <div class="container">
+    {% for report in site.tags['report'] limit:3 %}
+      <a><h1 class="title is-4" style="color:#fff;">  <i class="fas fa-file"></i> {{ report.title }}</h1></a>
+    {% endfor %}
+  </div>
+</section>

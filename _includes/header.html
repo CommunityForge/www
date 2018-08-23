@@ -1,0 +1,39 @@
+{% include nav.html %}
+
+
+  {% if page.layout == "home" %}
+    <div class="header-parallax">
+      <div id="header-home" class="header-bg"></div>
+      <div class="header-content" style="padding: 150px 0;">
+        <h1 class="title-head" style="align: center; color: #FBCE65; ">An inclusive Community Space dedicated to<br>creating opportunities for Wilkinsburg</h1>
+      </div>
+    </div>
+  {% elsif page.tag == "page-media"%}
+    <div class="header-parallax">
+      <div id="header-1" class="header-bg"></div>
+      <div class="header-content" style="padding-top: 75px;">
+        <h1 class="title-head" style="align: center;">{{ page.title }}</h1>
+      </div>
+    </div>
+  {% elsif page.tag == "page-events"%}
+    <div class="header-parallax">
+      <div id="header-2" class="header-bg"></div>
+      <div class="header-content" style="padding-top: 75px;">
+        <h1 class="title-head" style="align: center;">{{ page.title }}</h1>
+      </div>
+    </div>
+    {% elsif page.tag == "page-partners"%}
+      <div class="header-parallax">
+        <div id="header-3" class="header-bg"></div>
+        <div class="header-content" style="padding-top: 75px;">
+          <h1 class="title-head" style="align: center;">{{ page.title }}</h1>
+        </div>
+      </div>
+    {% else %}
+    <div class="header-parallax">
+      <div id="header-1" class="header-bg"></div>
+      <div class="header-content" style="padding-top: 75px;">
+        <h1 class="title-head" style="align: center;">{{ page.title }}</h1>
+      </div>
+    </div>
+  {% endif %}
