@@ -129,7 +129,7 @@ hr.shorty{
   overflow: hidden;
 }
 #header-home {
-  background: url('{{ site.url | absolute_url }}/assets/img/jston-front.jpg') no-repeat;
+  background: url('../assets/img/jston-front.jpg') no-repeat;
   background-size: cover;
 }
 #header-1 {
