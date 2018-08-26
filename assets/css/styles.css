@@ -31,7 +31,7 @@ a:hover {
 }
 
 #landing-img {
-  background-image: url("{{ site.url }}/assets/img/jston-front.jpg");
+  background-image: url("../img/jston-front.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 10vh;
@@ -133,17 +133,17 @@ hr.shorty{
   background-size: cover;
 }
 #header-1 {
-  background: url('{{ site.url }}/assets/img/header/cf-atrium.jpg') no-repeat;
+  background: url('../img/header/cf-atrium.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }
 #header-2 {
-  background: url('{{ site.url }}/assets/img/header/cf-room.jpg') no-repeat;
+  background: url('../img/header/cf-room.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }
 #header-3 {
-  background: url('{{ site.url }}/assets/img/header/cf-room2.jpg') no-repeat;
+  background: url('../img/header/cf-room2.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -163,7 +163,7 @@ hr.shorty{
   z-index: 2;
 }
 .parallax-bg {
-  background: url('{{ site.url }}/assets/img/cf-room2.jpg') no-repeat;
+  background: url('../img/cf-room2.jpg') no-repeat;
   background-size: cover;
   position: absolute;
   width: 100%;
@@ -185,7 +185,7 @@ hr.shorty{
   width: 100%;
   min-height: 400px;
   background: #52696D;
-  background-image: url('{{ site.url }}/assets/img/bg_buildings_1.png');
+  background-image: url('../img/bg_buildings_1.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center bottom;
@@ -206,7 +206,7 @@ hr.shorty{
   width: 100%;
   min-height: 400px;
   background: #52696D;
-  background-image: url('{{ site.url }}/assets/img/bg_buildings_1.png');
+  background-image: url('../img/bg_buildings_1.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: right bottom;
@@ -254,7 +254,7 @@ hr.shorty{
   width: 100%;
   min-height: 400px;
   background: #52696D;
-  background-image: url('/assets/img/bg_buildings_1.png');
+  background-image: url('../img/bg_buildings_1.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: left bottom;
@@ -271,7 +271,7 @@ hr.shorty{
 #ourteam-section {
   width: 100%;
   background: #52696D;
-  background-image: url('{{ site.url }}/assets/img/bg_buildings_1.png');
+  background-image: url('../img/bg_buildings_1.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: right bottom;
