@@ -4,14 +4,13 @@
 
     <h1 class="title-head" style="color:#fff;">Upcoming Events</h1>
     {% for post in site.tags['event'] limit:1 %}
-      <div style="height: 250px; width: 250px; background: url({{ post.event-thumbnail }}); background-size: cover; float: left; margin-right: 25px;"></div>
+      <div style="height: 250px; width: 250px; background: url({{ site.url }}{{ post.event-thumbnail }}); background-size: cover; float: left; margin-right: 25px;"></div>
             <div style="text-align: left;">
                 <h1 class="title is-4">{{ post.title | strip_html | truncatewords:10 }}</h1>
                 {{ post.event-date }}
                 <p>
                 {{ post.content | strip_html | truncatewords:48 }}
                 </p>
-
       </div>
     {% endfor %}
 
