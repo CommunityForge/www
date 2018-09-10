@@ -29,6 +29,20 @@
           <h1 class="title-head" style="align: center;">{{ page.title }}</h1>
         </div>
       </div>
+    {% elsif page.tag == "page-membership"%}
+      <div class="header-parallax">
+        <div id="header-4" class="header-bg"></div>
+        <div class="header-content" style="padding-top: 75px;">
+          <h1 class="title-head" style="align: center;">{{ page.title }}</h1>
+        </div>
+      </div>
+    {% elsif page.tag == "page-contact"%}
+      <div class="header-parallax">
+        <div id="header-5" class="header-bg"></div>
+        <div class="header-content" style="padding-top: 75px;">
+          <h1 class="title-head" style="align: center;">{{ page.title }}</h1>
+        </div>
+      </div>
     {% else %}
     <div class="header-parallax">
       <div id="header-1" class="header-bg"></div>

@@ -129,21 +129,31 @@ hr.shorty{
   overflow: hidden;
 }
 #header-home {
-  background: url('../img/jston-front.jpg') no-repeat;
+  background: url('../img/header/jston-front2.jpg') no-repeat;
   background-size: cover;
 }
 #header-1 {
-  background: url('../img/header/cf-atrium.jpg') no-repeat;
+  background: url('../img/header/cf-1.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }
 #header-2 {
-  background: url('../img/header/cf-room.jpg') no-repeat;
+  background: url('../img/header/cf-5.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }
 #header-3 {
-  background: url('../img/header/cf-room2.jpg') no-repeat;
+  background: url('../img/header/cf-6.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#header-4 {
+  background: url('../img/header/cf-2.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#header-5 {
+  background: url('../img/header/cf-3.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -163,7 +173,7 @@ hr.shorty{
   z-index: 2;
 }
 .parallax-bg {
-  background: url('../img/parallax_atrium.jpg') no-repeat;
+  background: url('../img/cf-stairs.jpg') no-repeat;
   background-size: cover;
   position: absolute;
   width: 100%;
