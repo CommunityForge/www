@@ -4,6 +4,7 @@
     <p>We are nine young adults with roots in Pittsburgh, including alumni from Carnegie Mellon and the University of Pittsburgh. Our backgrounds range widely from PhD Scientists to Educators to Extreme Sports athletes. At least one of us is always at the school, so if you’d like to say hello in person, come on by 1256 Franklin Avenue, Wilkinsburg, PA 15221</p>
     <div class="tile is-ancestor">
     {% for post in site.tags['team'] %}
+    test
     <div class="tile is-parent is-4 wraptile">
       <div class="tile is-child ourteam-tile">
         <div class="image is-1by1 image-link is-rounded">
@@ -12,7 +13,6 @@
             <h1 class="title is-4" style="color:#fff;">{{post.title}}</h1>
           </div>
         </div>
-
       </div>
     </div>
     {% endfor %}
