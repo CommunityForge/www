@@ -22,7 +22,7 @@ tag: page-partners
     {% for tenant in site.tags['tenant']%}
       <div class="tile is-parent is-4 wraptile">
         <div class="tile is-child">
-          <img src=" {{ tenant.img }}" style="width:100%;">
+          <img src={{site.url}}{{tenant.img}} style="width:100%;">
           <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
           {{ tenant.content }}
         </div>
