@@ -89,3 +89,12 @@ a:hover {
     display: block;
     padding-top: 50px;
 }
+
+.bright-link a{
+    color: #fbce65;
+}
+
+.bright-link a:hover {
+  color: #fbce65;
+  opacity: 0.5;
+}
