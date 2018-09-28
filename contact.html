@@ -5,8 +5,6 @@ tag: page-contact
 ---
 <section class="section">
   <div class="container">
-    <p>For inquiries related to leasing and coworking opportunities or for press-related matters, please contact Executive Director Mike Skirpan. He can be reached by email at mike@forge.community. General questions, comments and criticism can be submitted through the form below and will be responded to as quickly as we can.</p>
-    {% include common/contact_form.html %}
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <div class="tile is-child is-6 has-text-centered">
@@ -23,9 +21,18 @@ tag: page-contact
         </div>
       </div>
     </div>
+    {% include common/googlemap_embed.html %}
+  </div>
+  <div class="container">
+    <div class="tile is-child has-text-centered">
+      <h1 class="title is-4">Contact Us</h1>
+        <hr class="shorty">
+          <p> Questions and comments can be submitted through the form below or by emailing <strong>hello@forge.community</strong> and will be responded to as quickly as we can.
+            If you have a more urgent matter, you can reach our property manager at <strong>(412) 501-2055</strong>.</p>
+      {% include common/contact_form.html %}
+    </div>
   </div>
 </section>
-{% include common/googlemap_embed.html %}
 <!-- TENANT REQUEST SECTION
 <section class="section">
   <div class="container has-text-centered">
@@ -36,4 +43,3 @@ tag: page-contact
   </div>
 </section>
 -->
-{% include ourteam_section.html %}

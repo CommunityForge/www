@@ -2,7 +2,7 @@
 
   <div class="container">
 
-    <h1 class="title-head" style="color:#fff;">Upcoming Events</h1>
+    <h1 class="title-head" style="color:#fff;">Attend our next event</h1>
     {% for post in site.tags['event'] limit:1 %}
       <div style="height: 250px; width: 250px; background: url({{ site.url }}{{ post.event-thumbnail }}); background-size: cover; float: left; margin-right: 25px;"></div>
             <div style="text-align: left;">
