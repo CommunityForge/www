@@ -17,19 +17,26 @@
     </div>
   {% elsif page.tag == "page-events"%}
     <div class="header-parallax">
-      <div id="header-2" class="header-bg"></div>
+      <div id="header-8" class="header-bg"></div>
       <div class="header-content" style="padding-top: 75px;">
         <h1 class="title-head" style="align: center;">{{ page.title }}</h1>
       </div>
     </div>
-    {% elsif page.tag == "page-partners"%}
+    {% elsif page.tag == "page-programs"%}
+      <div class="header-parallax">
+        <div id="header-2" class="header-bg"></div>
+        <div class="header-content" style="padding-top: 75px;">
+          <h1 class="title-head" style="align: center;">{{ page.title }}</h1>
+        </div>
+      </div>
+    {% elsif page.tag == "page-residents"%}
       <div class="header-parallax">
         <div id="header-3" class="header-bg"></div>
         <div class="header-content" style="padding-top: 75px;">
           <h1 class="title-head" style="align: center;">{{ page.title }}</h1>
         </div>
       </div>
-    {% elsif page.tag == "page-membership"%}
+    {% elsif page.tag == "page-support"%}
       <div class="header-parallax">
         <div id="header-4" class="header-bg"></div>
         <div class="header-content" style="padding-top: 75px;">
