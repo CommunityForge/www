@@ -14,29 +14,33 @@ tag: page-support
       At Community Forge we provide multiple ways for you get to get involved based on what you are willing to contribute, by way of volunteer hours and financial support, through our <strong>Builder</strong> and <strong>Supporter</strong> Programs.
     </p>
   </div>
-  <div class="container">
+  <div class="container" style="padding: 50px">
+
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <div class="tile is-child has-text-left" style="padding: 25px;">
-          <h1 class='title is-4'>Become a Builder</h1>
-          <p>
-            Builders are individuals who give their time and help make things happen at Community Forge.
-          </p><br>
-          <p>You give:</p>
-          <ul style="list-style-type:square">
-            <li>10 hrs/month of volunteer time (e.g. building renovations, community event staffing, gardening)</li>
-            <li>$15/year minimum donation</li>
-          </ul><br>
-          <p>You get:</p>
-          <ul style="list-style-type:square">
-            <li>Community Forge T-shirt
-            <li>Membership Card</li>
-            <li>Opportunity to join a planning committee (after 3 consecutive months of meeting volunteer hour commitment)</li>
-            <li>Additional discounts with our partners (such as theater tickets with Pittsburgh Public Theater)</li>
-            <li>Invitation to special events</li>
-          </ul>
+      <div class="tile is-parent is-6">
+          <div class="tile is-child box has-text-left" style="padding: 15px 50px;">
+                <h1 class='title is-4'>Become a Builder</h1>
+                <p>
+                  Builders are individuals who give their time and help make things happen at Community Forge.
+                </p><br>
+                <p>You give:</p>
+                    <ul style="list-style-type:square">
+                      <li>10 hrs/month of volunteer time (e.g. building renovations, community event staffing, gardening)</li>
+                      <li>$15/year minimum donation</li>
+                    </ul><br>
+                <p>You get:</p>
+                    <ul style="list-style-type:square">
+                      <li>Community Forge T-shirt
+                      <li>Membership Card</li>
+                      <li>Opportunity to join a planning committee (after 3 consecutive months of meeting volunteer hour commitment)</li>
+                      <li>Additional discounts with our partners (such as theater tickets with Pittsburgh Public Theater)</li>
+                      <li>Invitation to special events</li>
+                    </ul>
+            </div>
           </div>
-          <div class="tile is-child has-text-left" style="padding: 25px;">
+
+          <div class="tile is-parent is-6">
+          <div class="tile is-child box has-text-left" style="padding: 15px 50px;">
             <h1 class='title is-4'>Become a Supporter</h1>
             <p>
               Supporters are individuals who give their professional expertise, in addition to their financial donation, to serve as a resource to community members.
@@ -55,31 +59,34 @@ tag: page-support
             </p>
             </div>
         </div>
+
+
       </div>
 <div class="container">
   <h1 class="title-head has-text-centered">Join the Community Forge crew today!</h1>
-  <div class="tile has-text-left" style="padding: 25px;">
+<div class="tile has-text-left" style="padding: 25px;">
+        <form name="support_form" action="https://formspree.io/nick@xpogo.com" method="POST" id="support-form">
 
-              <form id=mbs>
-                  <input type=hidden name=productId value='prod_ChLIFCpTiz59TQ'>
-                  <div class="field is-narrow">
-                      <label class="label">Program Choice</label>
-                      <p class="help">Which program would you like to join?</p>
-                      <div class="control">
-                          <div class="select">
+                  <!--<input type=hidden name=productId value='prod_ChLIFCpTiz59TQ'>-->
+                  <div class="field">
+                        <label class="label">Program Choice</label>
+                        <p class="help">Which program would you like to join?</p>
+                        <div class="control is-expanded">
+                          <div class="select is-fullwidth">
                               <select name='metadata[planning_committee]'>
                                   <option>Builder</option>
                                   <option>Supporter</option>
                                   <option>None</option>
                               </select>
                           </div>
-                      </div>
-                  </div>
-                  <div class="field is-narrow">
+                        </div>
+                    </div>
+
+                  <div class="field">
                       <label class="label">Planning Committee</label>
                       <p class="help">Which area would you like to help Community Forge plan for?</p>
-                      <div class="control">
-                          <div class="select">
+                      <div class="control is-expanded">
+                          <div class="select is-fullwidth">
                               <select name='metadata[planning_committee]'>
                                   <option>Programs</option>
                                   <option>Renovations</option>
@@ -88,12 +95,12 @@ tag: page-support
                               </select>
                           </div>
                       </div>
-                  </div>
+                    </div>
 
-                  <div class="field is-narrow">
+                  <div class="field">
                       <label class="label">T-Shirt Size</label>
-                      <div class="control">
-                          <div class="select">
+                      <div class="control is-expanded">
+                          <div class="select is-fullwidth">
                               <select name='metadata[tshirt_size]'>
                                   <option>XS</option>
                                   <option>S</option>
@@ -106,11 +113,11 @@ tag: page-support
                       </div>
                   </div>
 
-                  <div class="field is-narrow">
+                  <div class="field">
                       <label class="label">Preferred Use of Funds</label>
                       <p class="help">Give us an idea of how you'd like this money to be spent. This will be used to direct our planning, but is not a guarantee of how it will be spent.</p>
-                      <div class="control">
-                          <div class="select">
+                      <div class="control is-expanded">
+                          <div class="select is-fullwidth">
                               <select name='metadata[use_of_funds]'>
                                   <option>Free Events/Programming</option>
                                   <option>Subsidies for Community Organizations</option>
@@ -123,7 +130,7 @@ tag: page-support
 
                   <label class="label">Donation Amount</label>
                   <div class="field has-addons">
-                      <div class="control has-icons-left">
+                      <div class="control has-icons-left is-expanded">
                           <input id='amount' class="input" name='amount' type="text"
                                  placeholder="Donation Amount">
                           <span class="icon is-small is-left">
@@ -140,15 +147,17 @@ tag: page-support
                       </div>
                   </div>
 
-                  <div class="field is-narrow">
+                  <div class="field">
                       <label class='label'>Are you a Wilkinsburg resident?</label>
                       <div class="control">
-                          <div class="select">
-                              <select name='resident]'>
-                                  <option value=true>Yes</option>
-                                  <option value=false>No</option>
-                              </select>
-                          </div>
+                            <label class="radio">
+                                <input type="radio" name="question">
+                                  Yes
+                                </label>
+                                <label class="radio">
+                                <input type="radio" name="question">
+                                  No
+                                </label>
                       </div>
                   </div>
 
@@ -159,14 +168,14 @@ tag: page-support
                   </div>
 
                   <div class="field">
-                      <button type=submit id=getMembership class="button is-primary">
+                      <button type=submit id="getMembership" class="button is-primary">
                           Join the program!
                       </button>
                   </div>
               </form>
-            </p>
 
-  </div>
+
+</div>
 </div>
 <hr>
 <h1 class="title-head has-text-centered">Planning Committees</h1>
