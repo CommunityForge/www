@@ -5,7 +5,9 @@
       {% for post in site.tags['video'] %}
         <div class="tile is-parent is-6 wraptile">
           <div class="tile is-child video-tile">
-              {{ post.content }}
+              <!-- include embeded video -->
+              <!--{{ post.content }}-->
+              <span style="text-align: center;">{{ post.icon }} </span>
               <h1 class="title is-4 has-text-centered" style="color:#fff;">{{ post.title }}</h1>
               <hr class="shorty">
               <p>
