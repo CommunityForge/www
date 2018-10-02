@@ -12,6 +12,11 @@
                       {{ post.content | strip_html | truncatewords:48 }}
                     </p>
               </div>
+                  {% if post.pdf %}
+                  <a class="button is-primary" href ="{{ site.url }}/assets/pdf/{{ post.pdf }}" target="_blank">Read More</a>
+                  {% else %}
+                  <a class="button is-primary" href="{{ post.link }}" target="_blank">Read More</a>
+                  {% endif %}
               <div class="press-date">
                       <time datetime="{{ post.date}}" >{{ post.date | date_to_string }}</time>
               </div>

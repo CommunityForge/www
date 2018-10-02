@@ -1,6 +1,7 @@
 ---
 title: NEXTpittsburg - A vacant school becomes Wilkinsburg's community center for education and civic action
 tag: press
+link: https://www.nextpittsburgh.com/city-design/community-forge-is-putting-the-former-johnson-elementary-school-to-good-use-as-a-community-center/
 ---
 
 When the team behind Community Forge came together in 2016, they envisioned a
@@ -10,4 +11,3 @@ role in revitalizing an economically distressed neighborhood. Community members
 would have a say in everything, from the programming to the appearance of the
 physical space.... [READ
 MORE](https://www.nextpittsburgh.com/city-design/community-forge-is-putting-the-former-johnson-elementary-school-to-good-use-as-a-community-center/)
-

@@ -21,6 +21,12 @@ tag: page-media
     <h1 class="title-head">Press</h1>
     {% for post in site.tags['press'] %}
       <h1 class="title is-5 press-title">{{ post.title }}</h1>
+          {% if post.pdf %}
+          <a class="button is-primary" href ="{{ site.url }}/assets/pdf/{{ post.pdf }}" target="_blank">Read More</a>
+          {% else %}
+          <a class="button is-primary" href="{{ post.link }}" target="_blank">Read More</a>
+          {% endif %}
+      <a class="button is-primary"
       <time datetime="{{ post.date }}">{{ post.date | date_to_string}}</time>
       <hr>
     {% endfor %}
