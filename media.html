@@ -26,7 +26,6 @@ tag: page-media
           {% else %}
           <a class="button is-primary" href="{{ post.link }}" target="_blank">Read More</a>
           {% endif %}
-      <a class="button is-primary"
       <time datetime="{{ post.date }}">{{ post.date | date_to_string}}</time>
       <hr>
     {% endfor %}
