@@ -157,6 +157,11 @@ hr.shorty{
   background-size: cover;
   background-position: center;
 }
+#header-8 {
+  background: url('../img/header/cf-8.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .header-bg {
   position: absolute;
   width: 100%;

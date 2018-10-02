@@ -18,13 +18,18 @@ tag: page-residents
 
     <div class="tile is-ancestor">
     {% for tenant in site.tags['tenant']%}
+    {% if tenant.type == 'organization' %}
       <div class="tile is-parent is-4 wraptile">
         <div class="tile is-child">
           <img src={{site.url}}{{tenant.img}} style="width:100%;">
           <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
           {{ tenant.content }}
+          {% if tenant.website %}
+          <a class="button is-primary" href="{{ tenant.website }}">Website</a>
+          {% endif %}
         </div>
       </div>
+    {% endif %}
     {% endfor %}
     </div>
 
@@ -32,13 +37,18 @@ tag: page-residents
 
     <div class="tile is-ancestor">
     {% for tenant in site.tags['tenant']%}
+    {% if tenant.type == 'coworking' %}
       <div class="tile is-parent is-4 wraptile">
         <div class="tile is-child">
           <img src={{site.url}}{{tenant.img}} style="width:100%;">
           <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
           {{ tenant.content }}
+          {% if tenant.website %}
+          <a class="button is-primary" href="{{ tenant.website }}">Website</a>
+          {% endif %}
         </div>
       </div>
+    {% endif %}
     {% endfor %}
     </div>
 
@@ -46,13 +56,18 @@ tag: page-residents
 
     <div class="tile is-ancestor">
     {% for tenant in site.tags['tenant']%}
+    {% if tenant.type == 'artist' %}
       <div class="tile is-parent is-4 wraptile">
         <div class="tile is-child">
           <img src={{site.url}}{{tenant.img}} style="width:100%;">
           <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
           {{ tenant.content }}
+          {% if tenant.website %}
+          <a class="button is-primary" href="{{ tenant.website }}">Website</a>
+          {% endif %}
         </div>
       </div>
+    {% endif %}
     {% endfor %}
     </div>
 
