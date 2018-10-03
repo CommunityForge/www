@@ -62,7 +62,7 @@ tag: page-residents
     {% for tenant in site.tags['tenant']%}
     {% if tenant.type == 'artist' %}
       <div class="tile is-parent is-4 wraptile">
-        <div class="tile is-child">
+        <div class="tile is-child box">
           <img src={{site.url}}{{tenant.img}} style="width:100%;">
           <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
           {{ tenant.content }}
