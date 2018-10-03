@@ -1,6 +1,6 @@
 ---
-name: Angel Berry
+name: Angel Perry
 title: Property Manager
-image: 
+image: /assets/img/team/team-angel-perry.jpg
 tag: team
 ---
