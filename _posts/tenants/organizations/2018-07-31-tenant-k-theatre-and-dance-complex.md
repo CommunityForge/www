@@ -1,5 +1,5 @@
 ---
-title: K-Theatre and Dace Complex
+title: K-Theatre and Dance Complex
 tag: tenant
 type: organization
 website: https://www.ktheatre.com/

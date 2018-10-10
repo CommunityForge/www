@@ -1,5 +1,5 @@
 ---
-title: House fo Greens and Beans
+title: House of Greens and Beans
 tag: tenant
 type: coworking
 website: http://www.houseofgreensandbeans.com/
