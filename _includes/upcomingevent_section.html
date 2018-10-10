@@ -3,6 +3,48 @@
   <div class="container">
 
     <h1 class="title-head" style="color:#fff;">Attend our next event</h1>
+<!-- Siema Carousel Content -->
+    <div class="siema">
+      <!-- Slide One -->
+      <div class="upcomingevent">
+        <h1 class="title is-3">Halloween Fun Night</h1>
+        <span>October 27th, 2018, 4-7pm</span>
+        <hr class="shorty">
+        <p>Ghosts are coming to the former Johnston Elementary this Halloween season.
+        Community Forge is hosting a FREE Halloween get-together for the whole family on Saturday, October 27th, 4-7pm. We will have activities that every member of the family will enjoy including games, crafts, a scare room, and more.</p>
+      </div>
+      <!-- Slided Two -->
+      <div class="upcomingevent">
+        <h1 class="title is-3">Event Title 2</h1>
+        <span>October 30th, 2018, 2-4pm</span>
+        <hr class="shorty">
+        <p>Ghosts are coming to the former Johnston Elementary this Halloween season.
+        Community Forge is hosting a FREE Halloween get-together for the whole family on Saturday, October 27th, 4-7pm. We will have activities that every member of the family will enjoy including games, crafts, a scare room, and more.</p>
+      </div>
+      <!-- Slide Three -->
+      <div class="upcomingevent">
+        <h1 class="title is-3">Event Title 3</h1>
+        <span>November 2nd, 2018, 2-4pm</span>
+        <hr class="shorty">
+        <p>Ghosts are coming to the former Johnston Elementary this Halloween season.
+        Community Forge is hosting a FREE Halloween get-together for the whole family on Saturday, October 27th, 4-7pm. We will have activities that every member of the family will enjoy including games, crafts, a scare room, and more.</p>
+      </div>
+    </div>
+<!-- Carousel Buttons -->
+    <button class="prev button is-primary"><i class="fas fa-angle-left"></i></button>
+    <button class="next button is-primary"><i class="fas fa-angle-right"></i></button>
+<!-- Add Siema -->
+    <script>
+      const mySiema = new Siema({
+        duration: 500,
+        loop: true,
+      });
+      setInterval(() => mySiema.next(), 8000);
+      document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
+      document.querySelector('.next').addEventListener('click', () => mySiema.next());
+    </script>
+
+    <!--
     {% for post in site.tags['event'] limit:1 %}
       <div style="height: 250px; width: 250px; background: url({{ site.url }}{{ post.event-thumbnail }}); background-size: cover; float: left; margin-right: 25px;"></div>
             <div style="text-align: left;">
@@ -13,7 +55,7 @@
                 </p>
       </div>
     {% endfor %}
-
+-->
   </div>
 
 </section>

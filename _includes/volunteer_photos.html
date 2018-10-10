@@ -1,0 +1,25 @@
+<div class="volunteer_photos">
+
+</div>
+
+<!-- Siema Carousel Content -->
+    <div class="siema">
+      {% for item in site.volunteer_photos %}
+      <div class="upcomingevent">
+
+      </div>
+      {% endfor %}
+    </div>
+<!-- Carousel Buttons -->
+    <button class="prev button is-primary"><i class="fas fa-angle-left"></i></button>
+    <button class="next button is-primary"><i class="fas fa-angle-right"></i></button>
+<!-- Add Siema -->
+    <script>
+      const mySiema = new Siema({
+        duration: 500,
+        loop: true,
+      });
+      setInterval(() => mySiema.next(), 8000);
+      document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
+      document.querySelector('.next').addEventListener('click', () => mySiema.next());
+    </script>

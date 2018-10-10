@@ -17,7 +17,7 @@ tag: page-residents
     <h1 class="title-head has-text-centered">Resident Organizations</h1>
 
     <div class="tile is-ancestor">
-    {% for tenant in site.tags['tenant']%}
+    {% for tenant in site.residents %}
     {% if tenant.type == 'organization' %}
       <div class="tile is-parent is-4 wraptile">
         <div class="tile is-child box">
@@ -32,13 +32,12 @@ tag: page-residents
     {% endif %}
     {% endfor %}
     </div>
-
     <hr>
 
     <h1 class="title-head has-text-centered">Coworking Residents</h1>
 
     <div class="tile is-ancestor">
-    {% for tenant in site.tags['tenant']%}
+    {% for tenant in site.residents %}
     {% if tenant.type == 'coworking' %}
       <div class="tile is-parent is-4 wraptile">
         <div class="tile is-child box">
@@ -59,7 +58,8 @@ tag: page-residents
     <h1 class="title-head has-text-centered">Artists at Community Forge</h1>
 
     <div class="tile is-ancestor">
-    {% for tenant in site.tags['tenant']%}
+
+    {% for tenant in site.residents %}
     {% if tenant.type == 'artist' %}
       <div class="tile is-parent is-4">
         <div class="tile is-child box">

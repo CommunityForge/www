@@ -1,6 +1,6 @@
 ---
 name: Mike Skirpan
-title: Executive Director and Co-Founder
+title: Executive Director and <br>Co-Founder
 image: /assets/img/team/team-mike-skirpan.jpg
 tag: team
 ---

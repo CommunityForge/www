@@ -63,20 +63,17 @@ $(document).ready(function(){
       header: false,
       googleCalendarApiKey: 'AIzaSyBD-vybT9628eWbcaQdocUzKFFFdckKWgY',
       events: {
-        googleCalendarId: 'forge.community_qvpbcn8ael605ck60r8v1rgf10@group.calendar.google.com'
+        googleCalendarId: 'forge.community_v0ccuqq2n586emsv137jppaoeo@group.calendar.google.com'
       }
     });
 
     $('#calendar-month').fullCalendar({
       googleCalendarApiKey: 'AIzaSyBD-vybT9628eWbcaQdocUzKFFFdckKWgY',
       events: {
-          googleCalendarId: 'forge.community_qvpbcn8ael605ck60r8v1rgf10@group.calendar.google.com',
+          googleCalendarId: 'forge.community_v0ccuqq2n586emsv137jppaoeo@group.calendar.google.com',
           color: '#FBCE65',
           textColor: '#52696D'
       }
     });
-
-});
-$(function() {
 
 });

@@ -38,6 +38,12 @@ social:
   facebook: "https://www.facebook.com/CommunityForgePGH/"
   github: "https://github.com/communityforge"
 
+# Collections
+collections:
+  - team_members
+  - residents
+  - volunteer_photos
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
