@@ -331,3 +331,51 @@ text-align: center;
 .image-link:hover .image-link-overlay{
   opacity: 1;
 }
+.volunteer-carousel{
+  max-height: 350px;
+  overflow: hidden;
+}
+.volunteer-carousel img{
+  min-height: 350px;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: 150% 50%;
+}
+.carousel-image-container{
+  position: relative;
+}
+.carousel-image{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.carousel-image-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #FBCE65;
+}
+.carousel-image-container:hover .carousel-image-overlay{
+  opacity: 0.8;
+}
+.carousel-image-overlay h1{
+  color: #52696D;
+  text-align: center;
+  margin-top: 150px;
+}
+.carousel-image-overlay hr{
+  border: 0.5px solid #52696D;
+  margin-left:auto;
+  margin-right:auto;
+  width: 20%;
+}
+.sponsor-logo{
+  max-height: 100px;
+  width: auto;
+}

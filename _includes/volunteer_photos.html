@@ -1,25 +1,20 @@
-<div class="volunteer_photos">
-
-</div>
 
 <!-- Siema Carousel Content -->
-    <div class="siema">
-      {% for item in site.volunteer_photos %}
-      <div class="upcomingevent">
-
-      </div>
+    <div class="volunteer-carousel">
+      {% for image in site.volunteer_photos %}
+          <div class="carousel-image-container">
+            <a><img src="{{site.url}}{{image.image_path}}" alt="{{image.title}}" class="carousel-image"></a>
+            <div class="carousel-image-overlay"><h1 class="title is-4">{{image.title}}</h1><hr></div>
+          </div>
       {% endfor %}
     </div>
-<!-- Carousel Buttons -->
-    <button class="prev button is-primary"><i class="fas fa-angle-left"></i></button>
-    <button class="next button is-primary"><i class="fas fa-angle-right"></i></button>
-<!-- Add Siema -->
+
     <script>
-      const mySiema = new Siema({
+      const volunteers = new Siema({
+        selector: '.volunteer-carousel',
+        perPage: 3,
         duration: 500,
         loop: true,
       });
-      setInterval(() => mySiema.next(), 8000);
-      document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
-      document.querySelector('.next').addEventListener('click', () => mySiema.next());
+      setInterval(() => volunteers.next(), 3000);
     </script>

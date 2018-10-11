@@ -43,6 +43,7 @@ collections:
   - team_members
   - residents
   - volunteer_photos
+  - sponsors
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
