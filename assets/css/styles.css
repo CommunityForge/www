@@ -339,7 +339,7 @@ text-align: center;
   min-height: 350px;
   min-width: 100%;
   object-fit: cover;
-  object-position: 150% 50%;
+
 }
 .carousel-image-container{
   position: relative;
@@ -349,6 +349,7 @@ text-align: center;
   width: 100%;
   height: auto;
 }
+
 .carousel-image-overlay {
   position: absolute;
   top: 0;
@@ -364,6 +365,7 @@ text-align: center;
 .carousel-image-container:hover .carousel-image-overlay{
   opacity: 0.8;
 }
+
 .carousel-image-overlay h1{
   color: #52696D;
   text-align: center;
