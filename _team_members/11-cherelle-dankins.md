@@ -1,6 +1,6 @@
 ---
 name: Cherelle Dankins
-title: Administrative Manager
+title: Business Coordinator
 image: /assets/img/team/team-cherelle-dankins.jpg
 tag: team
 ---
