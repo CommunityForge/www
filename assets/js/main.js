@@ -64,6 +64,27 @@ $(document).ready(function(){
       googleCalendarApiKey: 'AIzaSyBD-vybT9628eWbcaQdocUzKFFFdckKWgY',
       events: {
         googleCalendarId: 'forge.community_v0ccuqq2n586emsv137jppaoeo@group.calendar.google.com'
+      },
+      loading: function(loading, view) {
+          if (!loading && $('#upcomingevent_section').length) {
+              window.setTimeout(function() {
+                let events = $('#calendar-list').fullCalendar('clientEvents');
+                for (var i in events) {
+                    let e = events[i];
+                    e.description = e.description || '';
+                    let template = $(`
+                      <div class="upcomingevent">
+                        <h1 class="title is-3"><a href="${e.url}">${e.title}</a></h1>
+                        <span>November 2nd, 2018, 2-4pm</span>
+                        <hr class="shorty">
+                        <p>${e.description}</p>
+                      </div>`)[0];
+                    console.log('adding new element');
+                    mySiema.append(template);
+                }
+                mySiema.remove(0);
+              }, 250);
+          }
       }
     });
 
