@@ -1,8 +1,10 @@
 {
  "dependencies": {
-   "express": "4.16.3",
-   "webtask-tools": "3.2.1",
+   "express": "4.16.4",
+   "webtask-tools": "3.4.0",
    "body-parser": "1.18.3",
-   "stripe": "6.0.0"
+   "google-spreadsheet": "2.0.6",
+   "babel-polyfill": "6.26",
+   "stripe": "6.12.1"
  }
 }
