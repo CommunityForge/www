@@ -78,7 +78,7 @@ $(document).ready(function(){
                         let template = $(`
                           <div class="upcomingevent">
                             <h1 class="title is-3"><a href="${e.url}">${e.title}</a></h1>
-                            <span>${e.start.calendar()}</span>
+                            <span class="event-date">${e.start.calendar()}</span>
                             <hr class="shorty">
                             <p>${e.description}</p>
                           </div>`)[0];

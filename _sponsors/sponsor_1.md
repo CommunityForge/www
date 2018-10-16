@@ -1,4 +1,4 @@
 ---
-title: Sponsor One
-image: /assets/img/sponsors/placeholder.jpg
+title: Neighborhood Allies
+image: /assets/img/sponsors/allies_logo.png
 ---

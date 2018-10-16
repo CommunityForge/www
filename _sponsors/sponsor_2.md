@@ -1,4 +1,4 @@
 ---
-title: Sponsor Two
-image: /assets/img/sponsors/placeholder.jpg
+title: Lyft
+image: /assets/img/sponsors/lyft_logo.png
 ---

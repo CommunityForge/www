@@ -227,9 +227,18 @@ hr.shorty{
   background-position: right bottom;
   color: #AEC2C6;
 }
-.upcomingevent{
+.upcomingevent {
   padding-left: 100px;
-  padding-right: 100px
+  padding-right: 100px;
+}
+.upcomingevent a{
+  color: #fff;
+}
+.upcomingevent a:hover {
+  color: #FBCE65;
+}
+.event-date{
+  font-size: 1.25rem;
 }
 #press-section {
   padding: 50px 0;
@@ -359,6 +368,7 @@ text-align: center;
   height: 100%;
   width: 100%;
   opacity: 0;
+  padding: 25px;
   transition: .5s ease;
   background-color: #FBCE65;
 }
@@ -369,15 +379,11 @@ text-align: center;
 .carousel-image-overlay h1{
   color: #52696D;
   text-align: center;
-  margin-top: 150px;
 }
-.carousel-image-overlay hr{
-  border: 0.5px solid #52696D;
-  margin-left:auto;
-  margin-right:auto;
-  width: 20%;
-}
+
 .sponsor-logo{
+  max-width: 200px;
   max-height: 100px;
+  margin: 25px;
   width: auto;
 }

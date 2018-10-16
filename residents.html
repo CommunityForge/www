@@ -20,8 +20,8 @@ tag: page-residents
     {% for tenant in site.residents %}
     {% if tenant.type == 'organization' %}
       <div class="tile is-parent is-4 wraptile">
-        <div class="tile is-child box">
-          <img src={{site.url}}/{{tenant.img}} style="width:100%;">
+        <div class="tile is-child box resident">
+          <img src={{site.url}}/{{tenant.img}} class="resident-image">
           <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
           {{ tenant.content }}
           {% if tenant.website %}
@@ -40,8 +40,8 @@ tag: page-residents
     {% for tenant in site.residents %}
     {% if tenant.type == 'coworking' %}
       <div class="tile is-parent is-4 wraptile">
-        <div class="tile is-child box">
-          <img src={{site.url}}/{{tenant.img}} style="width:100%;">
+        <div class="tile is-child box resident">
+          <img src={{site.url}}/{{tenant.img}} class="resident-image">
           <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
           {{ tenant.content }}
           {% if tenant.website %}
@@ -62,8 +62,8 @@ tag: page-residents
     {% for tenant in site.residents %}
     {% if tenant.type == 'artist' %}
       <div class="tile is-parent is-4">
-        <div class="tile is-child box">
-          <img src={{site.url}}/{{tenant.img}} style="width:100%;">
+        <div class="tile is-child box resident">
+          <img src={{site.url}}/{{tenant.img}} class="resident-image">
           <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
           {{ tenant.content }}
           {% if tenant.website %}

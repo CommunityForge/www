@@ -1,4 +1,4 @@
 ---
-title: Sponsor Four
-image: /assets/img/sponsors/placeholder.jpg
+title: New Sun Rising
+image: /assets/img/sponsors/nsr_logo.png
 ---

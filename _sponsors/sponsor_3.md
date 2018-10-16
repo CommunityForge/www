@@ -1,4 +1,4 @@
 ---
-title: Sponsor Thre
-image: /assets/img/sponsors/placeholder.jpg
+title: Microsoft
+image: /assets/img/sponsors/ms_logo.jpg
 ---
