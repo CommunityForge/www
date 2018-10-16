@@ -63,9 +63,8 @@ tag: page-support
 <div class="container">
   <h1 class="title-head has-text-centered">Join the Community Forge crew today!</h1>
 <div class="tile has-text-left" style="padding: 25px;">
-        <form name="support_form" action="https://formspree.io/nick@xpogo.com" method="POST" id="support-form">
-
-                  <!--<input type=hidden name=productId value='prod_ChLIFCpTiz59TQ'>-->
+        <form name="supportform" id="supportform">
+                  <input type=hidden name=productId value='prod_ChLIFCpTiz59TQ'>
                   <div class="field">
                     <label class="label">Name</label>
                     <p class="control has-icons-left">
@@ -100,6 +99,7 @@ tag: page-support
                         </div>
                     </div>
 
+                    <!-- No need to ask for mailing list... we get this from stripe
                     <div class="field">
                       <label class="label">Mailing Address</label>
                       <p class="help">Share your address to receive your t-shirt and membership card</p>
@@ -110,6 +110,7 @@ tag: page-support
                         </span>
                       </p>
                     </div>
+                    -->
 
                   <div class="field">
                       <label class="label">Planning Committee</label>
@@ -204,11 +205,39 @@ tag: page-support
               </form>
 
 
-</div>
-</div>
-</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function validate(form, amount) {
+        var reocurring = (form.find('select#reocurring').val() == 'true');
+        var yearly_amount = (reocurring * 11 + 1) * amount;
+        if (yearly_amount < 50) {
+            notify_modal('<p>Donation amount must be at least $50 annually.</p>', 'is-danger');
+            return false;
+        }
+        return true;
+    }
+        
+    attachCheckout(
+        $('#supportform'),
+        'Community Forge Membership',
+        validate,
+        '{{ site.stripe_webtask }}/stripe-payment/payment',
+        {
+            key: '{{ site.stripe_public_token }}',
+            shippingAddress: true,
+            billingAddress: true,
+        },
+    )
+    </script>
 </section>
+
+
 {% include volunteer_photos.html %}
+
+
 <section class="section">
 <div class="container" style="padding: 50px">
 <h1 class="title-head has-text-centered">Planning Committees</h1>
@@ -253,5 +282,6 @@ While Community Forge is led by a Board of Directors, our committees are where r
   </div>
 
     </div>
+
 </section>
 {% include sponsors.html %}
