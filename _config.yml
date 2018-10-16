@@ -14,15 +14,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Community Forge
-email: your-email@example.com
+email: info@forge.community
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Grow an inclusive Community Space dedicated to creating opportunities for
+  Wilkinsburg
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "/www_dev" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: CommForgePGH
+github_username: communityforge
 
 # Build settings
 markdown: kramdown
@@ -37,6 +36,8 @@ social:
   instagram: "https://www.instagram.com/communityforge/"
   facebook: "https://www.facebook.com/CommunityForgePGH/"
   github: "https://github.com/communityforge"
+stripe_webtask: https://wt-d2fef378aa30e9cc2a4cb3d8a0afe350-0.sandbox.auth0-extend.com
+stripe_public_token: pk_live_BcilKUB2Nk1jlsGfKwuENGqC
 
 # Collections
 collections:
