@@ -98,10 +98,9 @@ tag: page-support
                         <p class="help">Which program would you like to join?</p>
                         <div class="control is-expanded">
                           <div class="select is-fullwidth">
-                              <select name='metadata[program]'>
-                                  <option>Builder</option>
-                                  <option>Supporter</option>
-                                  <option>None</option>
+                              <select id='metadata[program]' name='metadata[program]'>
+                                  <option value='builder'>Builder</option>
+                                  <option value='supporter'>Supporter</option>
                               </select>
                           </div>
                         </div>
@@ -219,9 +218,11 @@ tag: page-support
 
     <script>
     function validate(form, amount) {
-        var reocurring = (form.find('select#reocurring').val() == 'true');
-        var yearly_amount = (reocurring * 11 + 1) * amount;
-        if (yearly_amount < 50) {
+        let reocurring = (form.find('select#reocurring').val() == 'true');
+        let program = (form.find('select#metadata[program]').val());
+        let yearly_amount_min = (program == 'builder' ? 15 : 50);
+        let yearly_amount = (reocurring * 11 + 1) * amount;
+        if (yearly_amount < yearly_amount_min) {
             notify_modal('<p>Donation amount must be at least $50 annually.</p>', 'is-danger');
             return false;
         }

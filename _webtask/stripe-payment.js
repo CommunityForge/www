@@ -72,9 +72,10 @@ productPreprocess['prod_ChLIFCpTiz59TQ'] = function(res, args) {
         meta.tshirt_size = null;
     }
     params['meta'] = meta;
+    let yearly_amount_min = (meta.program == 'builder' ? 1500 : 5000);
 
-    if ((!params.reocurring &&    params.amount < 5000) || 
-        ( params.reocurring && 12*params.amount < 5000)) {
+    if ((!params.reocurring &&    params.amount < yearly_amount_min) || 
+        ( params.reocurring && 12*params.amount < yearly_amount_min)) {
         return errorResponse({
             res: res,
             msg: 'You must donate more than $50 annually to become a member',
