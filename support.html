@@ -64,7 +64,12 @@ tag: page-support
   <h1 class="title-head has-text-centered">Join the Community Forge crew today!</h1>
 <div class="tile has-text-left" style="padding: 25px;">
         <form name="supportform" id="supportform">
-                  <input type=hidden name=productId value='prod_ChLIFCpTiz59TQ'>
+                  <input type=hidden name=productId value='{{ site.stripe.membership }}'>
+                  {% if site.debug %}
+                  <input type=hidden name=metadata[debug] value='debug'>
+                  {% endif %}
+
+                  <!-- Not needed because stripe will collect this
                   <div class="field">
                     <label class="label">Name</label>
                     <p class="control has-icons-left">
@@ -74,7 +79,9 @@ tag: page-support
                       </span>
                     </p>
                   </div>
+                  -->
 
+                  <!-- Not needed because stripe will collect this
                   <div class="field">
                     <label class="label">Email</label>
                     <p class="control has-icons-left has-icons-right">
@@ -84,13 +91,14 @@ tag: page-support
                       </span>
                     </p>
                   </div>
+                  -->
 
                   <div class="field">
                         <label class="label">Program Choice</label>
                         <p class="help">Which program would you like to join?</p>
                         <div class="control is-expanded">
                           <div class="select is-fullwidth">
-                              <select name='metadata[planning_committee]'>
+                              <select name='metadata[program]'>
                                   <option>Builder</option>
                                   <option>Supporter</option>
                                   <option>None</option>
@@ -181,11 +189,11 @@ tag: page-support
                       <label class='label'>Are you a Wilkinsburg resident?</label>
                       <div class="control">
                             <label class="radio">
-                                <input type="radio" name="question">
+                                <input type="radio" name="metadata[wilkinsburg_resident]" value=true>
                                   Yes
                                 </label>
                                 <label class="radio">
-                                <input type="radio" name="question">
+                                <input type="radio" name="metadata[wilkinsburg_resident]" value=false>
                                   No
                                 </label>
                       </div>
@@ -193,7 +201,7 @@ tag: page-support
 
                   <div class="field is-narrow">
                         <label class='label'>Tell us about your skills and interests</label>
-                      <input type='text' class='input' name='interest'
+                      <input type='text' class='input' name='metadata[interest]'
                              placeholder="Industry/Occupation/Interests">
                   </div>
 
@@ -224,9 +232,9 @@ tag: page-support
         $('#supportform'),
         'Community Forge Membership',
         validate,
-        '{{ site.stripe_webtask }}/stripe-payment/payment',
+        '{{ site.stripe.webtask }}/stripe-payment/payment',
         {
-            key: '{{ site.stripe_public_token }}',
+            key: '{{ site.stripe.token }}',
             shippingAddress: true,
             billingAddress: true,
         },

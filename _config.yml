@@ -22,6 +22,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "/www_dev" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: CommForgePGH
 github_username: communityforge
+debug: false
 
 # Build settings
 markdown: kramdown
@@ -36,8 +37,13 @@ social:
   instagram: "https://www.instagram.com/communityforge/"
   facebook: "https://www.facebook.com/CommunityForgePGH/"
   github: "https://github.com/communityforge"
-stripe_webtask: https://wt-d2fef378aa30e9cc2a4cb3d8a0afe350-0.sandbox.auth0-extend.com
-stripe_public_token: pk_live_BcilKUB2Nk1jlsGfKwuENGqC
+
+stripe:
+  webtask: https://wt-d2fef378aa30e9cc2a4cb3d8a0afe350-0.sandbox.auth0-extend.com
+  token: pk_live_BcilKUB2Nk1jlsGfKwuENGqC
+  membership: prod_ChLIFCpTiz59TQ
+  donation: prod_ChLH0CqLNzANNR
+
 
 # Collections
 collections:
