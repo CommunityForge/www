@@ -39,7 +39,7 @@ attachCheckout(
     $('#form-donate'),
     'Donate to Community Forge',
     validate,
-    '{{ site.stripe_webtask }}/stripe-payment/payment',
+    '{{ site.stripe.webtask }}/stripe-payment/payment',
     {
         key: '{{ site.stripe.token }}',
     },
