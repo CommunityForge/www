@@ -1,0 +1,47 @@
+<section id='donate-section' class='section is-centered-form'>
+<div class="container">
+  <h1 class="title-head">Donate Today</h1>
+  <form id=form-donate>
+      <input type=hidden name=productId value='{{ site.stripe.donate }}'>
+    <div class="field has-addons">
+        <div class="field-body">
+            <div class="control has-icons-left">
+                <input id='amount' class="input" name='amount' type="text" placeholder="Donation Amount">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-dollar-sign"></i>
+                </span>
+            </div>
+            <div class="control">
+              <div class="select">
+                <select id='reocurring' name='reocurring'>
+                  <option value='true'>Monthly</option>
+                  <option value='false'>One Time</option>
+                </select>
+              </div>
+            </div>
+            <div class="control">
+                <button type=submit class="button is-info">
+                    Donate!
+                </button>
+            </div>
+        </div>
+    </div>
+  </form>
+</div>
+</section>
+
+<script>
+function validate(form, amount) {
+    return true;
+}
+
+attachCheckout(
+    $('#form-donate'),
+    'Donate to Community Forge',
+    validate,
+    '{{ site.stripe_webtask }}/stripe-payment/payment',
+    {
+        key: '{{ site.stripe_public_token }}',
+    },
+)
+</script>

@@ -1,33 +1,65 @@
-title: "Community Forge, LLC"
-email: "hello@forge.community"
-description: "Build an inclusive Community Center dedicated to supporting Wilkinsburg by cultivating Arts, Civic Engagement, Athletics, Education, and mission-driven Small Business."
-url: "http://www.forge.community"
-show_downloads: false
-phone: 608-886-2295
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Community Forge
+email: info@forge.community
+description: >- # this means to ignore newlines until "baseurl:"
+  Grow an inclusive Community Space dedicated to creating opportunities for
+  Wilkinsburg
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "/www_dev" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: CommForgePGH
+github_username: communityforge
+debug: false
 
 # Build settings
 markdown: kramdown
-kramdown:
-  parse_block_html: true
 theme: minima
 plugins:
   - jekyll-feed
-exclude:
-  - Gemfile
-  - Gemfile.lock
-defaults:
-  scope:
-    path: "assets/img"
-  values:
-    image: true
 
 # Variables
-stripe_webtask: https://wt-d2fef378aa30e9cc2a4cb3d8a0afe350-0.sandbox.auth0-extend.com
-stripe_public_token: pk_live_BcilKUB2Nk1jlsGfKwuENGqC
-
+mission-statement: Grow an inclusive Community Space dedicated to creating opportunities for Wilkinsburg
 social:
   twitter: "https://twitter.com/CommForgePGH"
   instagram: "https://www.instagram.com/communityforge/"
   facebook: "https://www.facebook.com/CommunityForgePGH/"
   github: "https://github.com/communityforge"
+
+stripe:
+  webtask: https://wt-d2fef378aa30e9cc2a4cb3d8a0afe350-0.sandbox.auth0-extend.com
+  token: pk_live_BcilKUB2Nk1jlsGfKwuENGqC
+  membership: prod_ChLIFCpTiz59TQ
+  donation: prod_ChLH0CqLNzANNR
+
+
+# Collections
+collections:
+  - team_members
+  - residents
+  - volunteer_photos
+  - sponsors
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

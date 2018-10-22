@@ -1,27 +1,36 @@
-dbutton.is-primary {
-  background-color: #4b7e87;
+.button.is-primary {
+  margin-top:25px;
+  background-color: #52696D;
 }
 
 .button.is-primary:hover {
-  background-color: rgb(82, 105, 109);
+  background-color: #5F8288;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 3;
 }
 
 .navbar-title {
     font-family: atlCruiseBold;
-    font-size: 9vmin;
+    font-size: 2em;
 }
 
 a.navbar-item {
   background-color: transparent;
-  color: rgba(82, 105, 109, 0.5);
+  color: rgba(255, 255, 255, 0.9);
 }
 a.navbar-item:visited {
   background-color: transparent;
-  color: rgba(82, 105, 109, 0.5);
+  color: rgba(255, 255, 255, 0.9);
 }
 a.navbar-item:hover {
   background-color: transparent;
-  color: rgba(82, 105, 109, 1);
+  color: rgba(251, 206, 101, 1);
 }
 
 .navbarMenu {
@@ -54,9 +63,25 @@ a.navbar-item:hover {
 }
 
 .container {
-    width: 100%;
+    max-width: 960px;
+    z-index: 2;
 }
-
+.title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: inherit;
+}
 .section {
     padding: 1.5rem 1.5rem;
+}
+
+.section.is-centered-form {
+  background: #fff;
+}
+
+.icon {
+  color: #AEC2C6;
+}
+.tile{
+  flex-wrap: wrap;
 }

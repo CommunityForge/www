@@ -1,0 +1,45 @@
+<section id="upcomingevent_section" class="section is-centered-form">
+
+  <div class="container">
+
+    <h1 class="title-head" style="color:#fff;">Attend our next event</h1>
+<!-- Siema Carousel Content -->
+    <div id="upcomingevent_content" class="siema">
+
+        <div class="upcomingevent">
+          <h1 class="title is-3">Loading</h1>
+        </div>`;
+
+
+
+    </div>
+<!-- Carousel Buttons -->
+    <button class="prev button is-primary"><i class="fas fa-angle-left"></i></button>
+    <button class="next button is-primary"><i class="fas fa-angle-right"></i></button>
+
+<!-- Add Siema -->
+    <script>
+      const mySiema = new Siema({
+        duration: 500,
+        loop: true,
+      });
+      setInterval(() => mySiema.next(), 8000);
+      document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
+      document.querySelector('.next').addEventListener('click', () => mySiema.next());
+    </script>
+
+    <!--
+    {% for post in site.tags['event'] limit:1 %}
+      <div style="height: 250px; width: 250px; background: url({{ site.url }}{{ post.event-thumbnail }}); background-size: cover; float: left; margin-right: 25px;"></div>
+            <div style="text-align: left;">
+                <h1 class="title is-4">{{ post.title | strip_html | truncatewords:10 }}</h1>
+                {{ post.event-date }}
+                <p>
+                {{ post.content | strip_html | truncatewords:48 }}
+                </p>
+      </div>
+    {% endfor %}
+-->
+  </div>
+
+</section>

@@ -14,10 +14,12 @@ function _handleToken(form, url) {
                 if (data.statusCode === undefined) {
                     notify_modal('<p>Order Complete!</p>', 'is-success');
                 } else {
+                    console.log(data);
                     notify_modal('<h1>Error</h1><p>' + data.message + '</p>', 'is-danger');
                 }
             },
             error: function(data) {
+                console.log(data);
                 notify_modal('<h1>Error</h1><p>' + data + '</p>', 'is-danger');
             }
         });

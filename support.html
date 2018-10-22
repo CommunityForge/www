@@ -1,0 +1,296 @@
+---
+title: "Support Us"
+layout: default
+tag: page-support
+---
+
+<section class="section">
+  <div class="container">
+    <h1 class="title-head has-text-centered">Sustaining a community space takes a village</h1>
+    <p>
+      To serve our youth, families, artists, local businesses, and to offer our space as a facility for social action and community togetherness, <strong>your financial support and labor are needed</strong>. Your dollars and labor will go directly to supporting free community programming, beautifying our grounds for all to enjoy, and subsidizing community service organizations.
+    </p> <br>
+    <p>
+      At Community Forge we provide multiple ways for you get to get involved based on what you are willing to contribute, by way of volunteer hours and financial support, through our <strong>Builder</strong> and <strong>Supporter</strong> Programs.
+    </p>
+  </div>
+  <div class="container" style="padding: 50px">
+
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-6">
+          <div class="tile is-child box has-text-left" style="padding: 15px 50px;">
+                <h1 class='title is-4 has-text-centered'>Become a Builder</h1>
+                <hr class="shorty">
+                <p>
+                  Builders are individuals who give their time and help make things happen at Community Forge.
+                </p><br>
+                <p><strong>Requirements:</strong></p>
+                    <ul style="list-style-type:square; margin-left:25px;">
+                      <li>10 hrs/month of volunteer time (e.g. building renovations, community event staffing, gardening)</li>
+                      <li>$15/year minimum donation</li>
+                    </ul><br>
+            </div>
+          </div>
+
+          <div class="tile is-parent is-6">
+          <div class="tile is-child box has-text-left" style="padding: 15px 50px;">
+            <h1 class='title is-4 has-text-centered'>Become a Supporter</h1>
+            <hr class="shorty">
+            <p>
+              Supporters are individuals who give their professional expertise, in addition to their financial donation, to serve as a resource to community members.
+            </p><br>
+            <p><strong>Requirements:</strong></p>
+              <ul style="list-style-type:square; margin-left: 25px;">
+                <li> your professional expertise at a discounted rate at least one time a year during a Community Forge program or event </li>
+                <li> $50/year minimum donation</li>
+              </ul><br>
+            </div>
+        </div>
+        <div class="tile is-parent">
+        <div class="tile is-child box has-text-left" style="padding: 15px 50px;">
+          <h1 class='title is-4 has-text-centered'>Builder/Supporter Benefits</h1>
+            <ul style="list-style-type:square">
+              <li> Community Forge T-shirt </li>
+              <li> Membership Card </li>
+              <li> Builders get the opportunity to join a planning committee (after 3 consecutive months of meeting volunteer hour commitment)</li>
+              <li> Additional discounts with our partners (such as theater tickets with Pittsburgh Public Theater) </li>
+              <li> Invitation to special events (i.e. Annual Supporters Night, Builders Mixer) </li>
+          </p>
+          </div>
+      </div>
+
+      </div>
+<div class="container">
+  <h1 class="title-head has-text-centered">Join the Community Forge crew today!</h1>
+<div class="tile has-text-left" style="padding: 25px;">
+        <form name="supportform" id="supportform">
+                  <input type=hidden name=productId value='{{ site.stripe.membership }}'>
+                  {% if site.debug %}
+                  <input type=hidden name=metadata[debug] value='debug'>
+                  {% endif %}
+
+                  <!-- Not needed because stripe will collect this
+                  <div class="field">
+                    <label class="label">Name</label>
+                    <p class="control has-icons-left">
+                      <input id="contact_name" class="input" type="text" placeholder="Full Name" name="name">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-user"></i>
+                      </span>
+                    </p>
+                  </div>
+                  -->
+
+                  <!-- Not needed because stripe will collect this
+                  <div class="field">
+                    <label class="label">Email</label>
+                    <p class="control has-icons-left has-icons-right">
+                      <input id="contact_email" class="input" type="text" placeholder="Full email address" name="email">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-envelope"></i>
+                      </span>
+                    </p>
+                  </div>
+                  -->
+
+                  <div class="field">
+                        <label class="label">Program Choice</label>
+                        <p class="help">Which program would you like to join?</p>
+                        <div class="control is-expanded">
+                          <div class="select is-fullwidth">
+                              <select id='metadata[program]' name='metadata[program]'>
+                                  <option value='builder'>Builder</option>
+                                  <option value='supporter'>Supporter</option>
+                              </select>
+                          </div>
+                        </div>
+                    </div>
+
+                    <!-- No need to ask for mailing list... we get this from stripe
+                    <div class="field">
+                      <label class="label">Mailing Address</label>
+                      <p class="help">Share your address to receive your t-shirt and membership card</p>
+                      <p class="control has-icons-left has-icons-right">
+                        <input id="contact_email" class="input" type="text" placeholder="Address, City, State, Zipcode" name="email">
+                        <span class="icon is-small is-left">
+                          <i class="fa fa-mail-bulk"></i>
+                        </span>
+                      </p>
+                    </div>
+                    -->
+
+                  <div class="field">
+                      <label class="label">Planning Committee</label>
+                      <p class="help">Which area would you like to help Community Forge plan for?</p>
+                      <div class="control is-expanded">
+                          <div class="select is-fullwidth">
+                              <select name='metadata[planning_committee]'>
+                                  <option>Programs</option>
+                                  <option>Renovations</option>
+                                  <option>Communications</option>
+                                  <option>None</option>
+                              </select>
+                          </div>
+                      </div>
+                    </div>
+
+                  <div class="field">
+                      <label class="label">T-Shirt Size</label>
+                      <div class="control is-expanded">
+                          <div class="select is-fullwidth">
+                              <select name='metadata[tshirt_size]'>
+                                  <option>XS</option>
+                                  <option>S</option>
+                                  <option>M</option>
+                                  <option>L</option>
+                                  <option>XL</option>
+                                  <option value=false>None</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="field">
+                      <label class="label">Preferred Use of Funds</label>
+                      <p class="help">Give us an idea of how you'd like this money to be spent. This will be used to direct our planning, but is not a guarantee of how it will be spent.</p>
+                      <div class="control is-expanded">
+                          <div class="select is-fullwidth">
+                              <select name='metadata[use_of_funds]'>
+                                  <option>Free Events/Programming</option>
+                                  <option>Subsidies for Community Organizations</option>
+                                  <option>Building Beautification</option>
+                                  <option>General Support</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+
+                  <label class="label">Donation Amount</label>
+                  <div class="field has-addons">
+                      <div class="control has-icons-left is-expanded">
+                          <input id='amount' class="input" name='amount' type="text"
+                                 placeholder="Donation Amount">
+                          <span class="icon is-small is-left">
+                              <i class="fas fa-dollar-sign"></i>
+                          </span>
+                      </div>
+                      <div class="control">
+                          <div class="select">
+                              <select id='reocurring' name='reocurring'>
+                                  <option value='true'>Monthly</option>
+                                  <option value='false'>One Time</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="field">
+                      <label class='label'>Are you a Wilkinsburg resident?</label>
+                      <div class="control">
+                            <label class="radio">
+                                <input type="radio" name="metadata[wilkinsburg_resident]" value=true>
+                                  Yes
+                                </label>
+                                <label class="radio">
+                                <input type="radio" name="metadata[wilkinsburg_resident]" value=false>
+                                  No
+                                </label>
+                      </div>
+                  </div>
+
+                  <div class="field is-narrow">
+                        <label class='label'>Tell us about your skills and interests</label>
+                      <input type='text' class='input' name='metadata[interest]'
+                             placeholder="Industry/Occupation/Interests">
+                  </div>
+
+                  <div class="field">
+                      <button type=submit id="getMembership" class="button is-primary">
+                          Join the program!
+                      </button>
+                  </div>
+              </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function validate(form, amount) {
+        let reocurring = (form.find('select#reocurring').val() == 'true');
+        let program = (form.find('select#metadata[program]').val());
+        let yearly_amount_min = (program == 'builder' ? 15 : 50);
+        let yearly_amount = (reocurring * 11 + 1) * amount;
+        if (yearly_amount < yearly_amount_min) {
+            notify_modal('<p>Donation amount must be at least $50 annually.</p>', 'is-danger');
+            return false;
+        }
+        return true;
+    }
+        
+    attachCheckout(
+        $('#supportform'),
+        'Community Forge Membership',
+        validate,
+        '{{ site.stripe.webtask }}/stripe-payment/payment',
+        {
+            key: '{{ site.stripe.token }}',
+            shippingAddress: true,
+            billingAddress: true,
+        },
+    )
+    </script>
+</section>
+
+
+{% include volunteer_photos.html %}
+
+
+<section class="section">
+<div class="container" style="padding: 50px">
+<h1 class="title-head has-text-centered">Planning Committees</h1>
+<p style="margin-bottom: 50px;">
+While Community Forge is led by a Board of Directors, our committees are where rubber meets the road to make the community space run.  After 3 consecutive months of being involved, community members in our builders program can join one of these committees and help direct the development of our organization.
+</p>
+<div class="tile is-ancestor">
+
+  <div class="tile is-parent">
+      <div class="tile is-child box" style="padding: 25px;">
+        <h1 class="title is-5 has-text-centered">Programs</h1>
+        <hr class="shorty">
+        <p>
+          Community programs are the heart of our organization and a primary way that we meet our mission towards youth empowerment, organizational incubation, and neighborhood wellbeing.  This committee evaluates needs in Wilkinsburg, builds partnerships, and develops and runs new programs.
+        </p>
+        <img src="{{site.url}}/assets/img/committee_1.png" style="margin-top: 25px;">
+      </div>
+</div>
+
+      <div class="tile is-parent">
+      <div class="tile is-child box" style="padding: 25px;">
+        <h1 class="title is-5 has-text-centered">Renovations</h1>
+        <hr class="shorty">
+        <p>
+          Built in 1922, the Johnston Elementary School is a historical gem in Wilkinsburg. Community Forge aims to rejuvenate the building, bringing in new structural possibilities while preserving the original character. This committee deals with project development, fundraising, and implementation of new building renovations.
+        </p>
+        <img src="{{site.url}}/assets/img/committee_2.png" style="margin-top: 25px;">
+      </div>
+</div>
+
+      <div class="tile is-parent">
+      <div class="tile is-child box" style="padding: 25px;">
+        <h1 class="title is-5 has-text-centered">Communications</h1>
+        <hr class="shorty">
+        <p>
+          Clear and transparent communication is key in making a lively space and continually changing to meet new needs and interests among community members. This committee runs all communication platforms (website, newsletter, social media) for Community Forge and outreach with community partners and neighbors.
+        </p>
+        <img src="{{site.url}}/assets/img/committee_3.png" style="margin-top: 25px;">
+      </div>
+    </div>
+
+  </div>
+
+    </div>
+
+</section>
+{% include sponsors.html %}

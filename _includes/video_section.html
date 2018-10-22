@@ -1,0 +1,21 @@
+<section id="video-section" class='section is-centered-form'>
+<div class="container">
+<h1 class="title-head" style="color:#fff;">What we're about</h1>
+<div class="tile is-ancestor">
+      {% for post in site.tags['video'] %}
+        <div class="tile is-parent is-6 wraptile">
+          <div class="tile is-child video-tile">
+              <!-- include embeded video -->
+              <!--{{ post.content }}-->
+              <span style="font-size: 3rem; text-align: center;">{{ post.icon }} </span>
+              <h1 class="title is-4 has-text-centered" style="color:#fff;">{{ post.title }}</h1>
+              <hr class="shorty">
+              <p>
+              {{ post.description }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+</div>
+</div>
+</section>

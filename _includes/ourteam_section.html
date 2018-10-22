@@ -1,0 +1,21 @@
+<section id="ourteam-section" class="section is-centered-form">
+  <div class="container">
+    <h1 class="title-head">Our Team</h1>
+    <p>Community Forge was founded by eight young adults with roots in Pittsburgh and backgrounds ranging from PhD Scientists to Educators to Extreme Sports Athletes. We have since brought community members onboard as board members, staff, and volunteers.  Our organizational structure consists of our Board of Directors (4 members and our Executive Director) and five core Committees (finance, tenants, renovations, communications, and programs).</p>
+    <div class="tile is-ancestor">
+    {% for post in site.team_members %}
+    <div class="tile is-parent is-4 wraptile">
+      <div class="tile is-child ourteam-tile">
+        <div class="image image-link is-rounded">
+          <img class="is-rounded" src={{site.url}}{{post.image}}>
+          <div class="image-link-overlay">
+            <h1 class="title is-5" style="color:#fff; white-space: nowrap;">{{post.name}}</h1>
+            <h1 class="title is-6" style="color:#fff;">{{post.title}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+</section>

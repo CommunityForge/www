@@ -1,0 +1,93 @@
+<form name="contact_form" action="https://formspree.io/nick@xpogo.com" method="POST" id="contact-form">
+  <div class="field">
+    <label class="label">Name</label>
+    <p class="control has-icons-left">
+      <input id="contact_name" class="input" type="text" placeholder="Full Name" name="name">
+      <span class="icon is-small is-left">
+        <i class="fa fa-user"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <label class="label">Email</label>
+    <p class="control has-icons-left has-icons-right">
+      <input id="contact_email" class="input" type="text" placeholder="Full email address" name="email">
+      <span class="icon is-small is-left">
+        <i class="fa fa-envelope"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <label class="label">Organization</label>
+    <p class="control has-icons-left has-icons-right">
+      <input id="contact_organization" class="input" type="text" placeholder="Organization or Company" name="organization">
+      <span class="icon is-small is-left">
+        <i class="fa fa-users"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <label class="label">Phone Number</label>
+    <p class="control has-icons-left has-icons-right">
+      <input id="contact_phone" class="input" type="text" placeholder="Phone number" name="phone">
+      <span class="icon is-small is-left">
+        <i class="fa fa-phone"></i>
+      </span>
+    </p>
+  </div>
+
+  <div class="field">
+    <label class="label">Message</label>
+    <p class="control">
+      <textarea name="contact_message" class="textarea" placeholder="Dear Community Forge..." name="message"></textarea>
+    </p>
+  </div>
+
+  <div class="field is-grouped">
+    <p class="control">
+      <button id="contact_submit" class="button is-primary">Submit</button>
+    </p>
+    <p class="control">
+      <button class="button is-primary">Cancel</button>
+    </p>
+  </div>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/validator/8.0.0/validator.min.js"
+        integrity="sha256-GHRpwahD0+gLSh/nVOpiWITCTDnnACCwbKBsNoJUW8s="
+        crossorigin="anonymous">
+</script>
+
+<script>
+  var badName = false;
+  var badEmail = false;
+  $("#contact_form").submit(function(e) {
+    e.preventDefault();
+    var nameField = $('#contact_name')
+    var nameValid = nameField.val().length > 0;
+    if (!nameValid) {
+      nameField.addClass("is-danger");
+
+      if (badName === false) {
+        badName = true;
+        nameField.parent().parent().append('<p class="help is-danger">Please include your full name</p>');
+      }
+    }
+
+    var emailField = $('#contact_email')
+    var emailValid = validator.isEmail(emailField.val()) && emailField.val().length > 0;
+    if (!emailValid) {
+      emailField.addClass("is-danger");
+
+      if (badEmail === false) {
+        badEmail = true;
+        emailField.parent().parent().append('<p class="help is-danger">Please include a valid email</p>');
+      }
+    }
+
+    var formValid = nameValid & emailValid;
+    if (formValid) { $("#contact_form").submit(); }
+  });
+</script>

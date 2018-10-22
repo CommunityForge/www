@@ -1,23 +1,35 @@
 ---
 title: "About"
 layout: default
+tag: page-media
 ---
 
-<section class='section'>
-    <article class='message'>
-        <div class='message-body'>
-            <h1 class="title">Mission</h1>
-            {% capture content %}{% include index/mission.md %}{% endcapture %}
-            {{ content | markdownify }}
-        </div>
-    </article>
+<section class="section has-text-centered">
+  <div class="container">
+    <h1 class="title-head">History</h1>
+    <p> Our mission is to <strong> “grow an inclusive Community Space dedicated to creating opportunities for Wilkinsburg by supporting small business, promoting learning, contributing to neighborhood wellbeing, and cultivating regional partnerships.”</strong> </p><br>
+    <p>
+Community Forge was formed in January 2017 with the purpose of revitalizing the former Johnston Elementary School in Wilkinsburg as a community resource. Starting with a partnership between Pittsburgh Learning Commons and Xpogo, a group of 8 individuals purchased the building from the school board in July 2017, and built a vision together with Wilkinsburg residents on how to revitalize Johnston. From our outreach and community board members, we heard three main values rise to the top: 1. Johnston should continue to be a place for kids, promoting youth learning; 2. We should promote the prosperity of those in Wilkinsburg through employment opportunities and support to build sustainable businesses; and 3. We should keep Johnston Elementary accessible to all those who went to school there. Building on those points, Community Forge sought out individuals and organizations that supported those goals to make their home with us. Community Forge opened doors in January 2018 and is now home to artists, educators, and entrepreneurs looking to grow, run community events, and provide new and unique programs to the Wilkinsburg community.
+    </p>
+  </div>
 </section>
-    
-<section class='section'>
-    <article class='message'>
-        <div class='message-body'>
-            <h1 class="title">Us</h1>
-              The founders of Community Forge are Mike, Jackie, Coop, Nick, Magdalene, Nathan, Justin, Ariel, and Micha. We are nine young adults with roots in Pittsburgh, including alumni from Carnegie Mellon and the University of Pittsburgh. Our backgrounds range widely from PhD Scientists to Educators to Extreme Sports athletes. At least one of us is always at the school, so if you’d like to say hello in person, come on by 1256 Franklin Avenue, Wilkinsburg, PA 15221.
-        </div>
-    </article>
-</section
+
+{% include ourteam_section.html %}
+
+<section class="section has-text-centered">
+  <div class="container">
+    <h1 class="title-head">Press</h1>
+    {% for post in site.tags['press'] %}
+      <h1 class="title is-5 press-title">{{ post.title }}</h1>
+          {% if post.pdf %}
+          <a class="button is-primary" href ="{{ site.url }}/assets/pdf/{{ post.pdf }}" target="_blank">Read More</a>
+          {% else %}
+          <a class="button is-primary" href="{{ post.link }}" target="_blank">Read More</a>
+          {% endif %}
+      <time datetime="{{ post.date }}">{{ post.date | date_to_string}}</time>
+      <hr>
+    {% endfor %}
+  </div>
+</section>
+{% include reports_section.html %}
+{% include social_section.html %}

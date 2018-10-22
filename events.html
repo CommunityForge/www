@@ -1,10 +1,26 @@
 ---
 title: "Events"
 layout: default
+tag: page-events
 ---
 
-  <div class="container box">
-    <p class="title">Community Forge Events</p>
-    <br>
-    {% include common/events_calendar.html %}
+<section class="section">
+  <div class="container has-text-centered">
+    <h1 class="title-head is-4">Community Forge Events</h1>
+    <p>
+      Community Forge is proud to host a wide range of public events, many of which are free or reduced price for Wilkinsburg residents. Past events run by community organizations and Community Forge have included: Mac n’ Cheese cook-off, CF Annual BBQ and SunFest celebration of music and art, Toy Drive, community health documentaries, and much more.  Check out our listings below for upcoming events and programs.
+    </p>
   </div>
+</section>
+{% include common/calendar_month.html %}
+<section class="section">
+  <div class="container has-text-centered">
+    <h1 class="title-head">Booking Your Event</h1>
+    <p>
+      We have been happy to host many different and wonderful events since opening in January 2018, but due to high demand and limited staff capacity, we are currently suspending all new external bookings until 2019.  We will continue to host public events that have been scheduled and from current resident organizations. Please sign up for our mailing list to stay tuned for when we reopen bookings.  If you think your event qualifies as a program, please fill out our <a href="{{ site.url }}/contact.html">contact form</a>.
+    </p>
+  </div>
+</section>
+{% comment %}
+{% include common/booking_form.html %}
+{% endcomment %}

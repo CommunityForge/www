@@ -1,0 +1,28 @@
+<section id="press-section" class="parallax-section">
+  <div class="parallax-bg"></div>
+  <div class="container">
+    <h1 class="title-head">What they're saying about us</h1>
+    <div class="tile is-ancestor">
+      {% for post in site.tags['press'] limit:6 %}
+        <div class="tile is-parent is-6">
+          <div class="tile is-child box">
+              <h1 class="title is-5 press-title" >{{ post.title | strip_html | truncatewords:10 }}</h1>
+              <div class="content">
+                      <p>
+                      {{ post.content | strip_html | truncatewords:48 }}
+                    </p>
+              </div>
+                  {% if post.pdf %}
+                  <a class="button is-primary" href ="{{ site.url }}/assets/pdf/{{ post.pdf }}" target="_blank">Read More</a>
+                  {% else %}
+                  <a class="button is-primary" href="{{ post.link }}" target="_blank">Read More</a>
+                  {% endif %}
+              <div class="press-date">
+                      <time datetime="{{ post.date}}" >{{ post.date | date_to_string }}</time>
+              </div>
+          </div>
+        </div>
+      {% endfor %}
+  </div>
+  </div>
+</section>

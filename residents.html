@@ -1,0 +1,79 @@
+---
+title: "Residents"
+layout: default
+tag: page-residents
+---
+
+<section class="section">
+  <div class="container">
+    <h1 class="title-head has-text-centered">Residents at Community Forge</h1>
+    <p>
+      Community Forge is shaped by the amazing organizations and individuals who have found their home here. Many from residents offer unique programs and services ranging from afterschool theatre for youth to steelpan lessons to mobile blood testing.  Look below for more information on our residents and what they offer.
+    </p><br>
+    <p>
+      <strong>We have room for more!</strong>  From full classrooms to coworking desks, we have a range of spaces that could support you and your organization.  Please contact us at hello@forge.community, via our <a href="{{ site.url }}/contact.html">contact form</a>, or by phone (412-501-2055) to schedule a tour and learn more.
+    </p>
+
+    <h1 class="title-head has-text-centered">Resident Organizations</h1>
+
+    <div class="tile is-ancestor">
+    {% for tenant in site.residents %}
+    {% if tenant.type == 'organization' %}
+      <div class="tile is-parent is-4 wraptile">
+        <div class="tile is-child box resident">
+          <img src={{site.url}}/{{tenant.img}} class="resident-image">
+          <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
+          {{ tenant.content }}
+          {% if tenant.website %}
+          <a class="button is-primary" href="{{ tenant.website }}">Website</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+    <hr>
+
+    <h1 class="title-head has-text-centered">Coworking Residents</h1>
+
+    <div class="tile is-ancestor">
+    {% for tenant in site.residents %}
+    {% if tenant.type == 'coworking' %}
+      <div class="tile is-parent is-4 wraptile">
+        <div class="tile is-child box resident">
+          <img src={{site.url}}/{{tenant.img}} class="resident-image">
+          <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
+          {{ tenant.content }}
+          {% if tenant.website %}
+          <a class="button is-primary" href="{{ tenant.website }}">Website</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+
+    <hr>
+
+    <h1 class="title-head has-text-centered">Artists at Community Forge</h1>
+
+    <div class="tile is-ancestor">
+
+    {% for tenant in site.residents %}
+    {% if tenant.type == 'artist' %}
+      <div class="tile is-parent is-4">
+        <div class="tile is-child box resident">
+          <img src={{site.url}}/{{tenant.img}} class="resident-image">
+          <h1 class="title is-4 has-text-centered">{{ tenant.title }}</h1>
+          {{ tenant.content }}
+          {% if tenant.website %}
+          <a class="button is-primary" href="{{ tenant.website }}">Website</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+
+  </div>
+</section>

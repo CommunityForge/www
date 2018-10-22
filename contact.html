@@ -1,37 +1,47 @@
 ---
 title: "Contact"
 layout: default
+tag: page-contact
 ---
-<div class="columns is-multiline">
-    <div class='card column is-6'>
-        <h1 class='title'>Where to find us</h1>
-        Visit us at <a href="https://www.google.com/maps?q=1256+Franklin+Ave,+Wilkinsburg,+PA+15221">1256
-        Franklin Ave, Wilkinsburg, PA 15221</a>. We have a parking lot
-        located on the east side of the building.  When you turn onto Franklin,
-        make your first left to enter our lot.<br>
+<section class="section">
+  <div class="container">
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <div class="tile is-child is-6 has-text-centered">
+          <h1 class="title is-4">Where to find us</h1>
+            <hr class="shorty">
+            Visit us at <strong>1256 Franklin Ave, Wilkinsburg, PA 15221</strong>.<br> We have a parking lot located on the east side of the building. When you turn onto Franklin, make your first left to enter our lot.
+        </div>
+        <div class="tile is-child is-6 has-text-centered">
+          <h1 class="title is-4">Our Hours</h1>
+            <hr class="shorty">
+            <strong>Building Hours</strong><br>
+            Mon - Fri 8AM - 9PM; Sat - Sun 10AM - 5PM <br>
+            <strong>Property Manager Office Hours</strong><br>
+            Mon, Tue, Fri, Sat 12PM - 3PM;
+            Wed, Thur 9AM - 12PM
+        </div>
+      </div>
     </div>
-    <div class='card column is-6'>
-        <h1 class='title'>Hours</h1>
-        We are open:<br>
-        <b>Monday - Friday</b>: 8AM - 8PM
-        <b>Saturday - Sunday</b> 10AM - 5PM
-    </div>
-    <div class='column is-12'>
-        <img class='is-centered-img' src="{{site.url}}/assets/img/cfparking.png">
-    </div>
-</div>
-    
-
-  <div class="box">
-    <h1 class="title">Contact Information</h1>
-    <h2 class="subtitle">We'll get back to you as soon as we can.</h2>
-    <p>For inquiries related to leasing and coworking opportunities or for press-related matters, please contact Executive Director Mike Skirpan. He can be reached by email at <a href="mailto:mik@forge.community?Subject=communityforge inquiry">mike@forge.community</a>. General questions, comments and criticism can be submitted through the form below and will be responded to as quickly as we can.</p>
-    <br>
-    {% include contact/contact_form.html %}
+    {% include common/googlemap_embed.html %}
   </div>
-
-  <div class="box">
-    <h1 class="title">Tenant Requests</h1>
-    <p class="subtitle">If you rent from Community Forge and have an issue, request, or required maintenance, call us at <a href='tel:4125012055'> (412) 501-2055</a> or use the <a href="https://goo.gl/forms/rClOLb6Gg08VlPlz2">Community Forge Tenant Ticket Form</a> we will get back to you ASAP.</p>
+  <div class="container">
+    <div class="tile is-child has-text-centered">
+      <h1 class="title is-4">Contact Us</h1>
+        <hr class="shorty">
+          <p> Questions and comments can be submitted through the form below or by emailing <strong>hello@forge.community</strong> and will be responded to as quickly as we can.
+            If you have a more urgent matter, you can reach our property manager at <strong>(412) 501-2055</strong>.</p>
+      {% include common/contact_form.html %}
+    </div>
   </div>
-
+</section>
+<!-- TENANT REQUEST SECTION
+<section class="section">
+  <div class="container has-text-centered">
+    <h1 class="title is-4">Tenant Requests</h1>
+    <hr class="shorty">
+      If you rent from Community Forge and have an issue, request, or required maintenance, call us at <strong>(412) 501-2055</strong><br>
+      or use the <strong><a>Community Forge Tenant Ticket Form</a></strong> we will get back to you ASAP.
+  </div>
+</section>
+-->

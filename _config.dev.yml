@@ -1,0 +1,7 @@
+debug: true
+
+stripe:
+    token: pk_test_O1UeXIayquxnAnenantgT8Ml
+    membership: prod_DncvUcw6Jh7HgY
+    donation: prod_DncyKfT2YLWQvW
+
