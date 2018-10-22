@@ -12,7 +12,7 @@ layout: default
         </div>
         <div class='column'>
             <form id=mbs>
-                <input type=hidden name=productId value='prod_ChLIFCpTiz59TQ'>
+                <input type=hidden name=productId value='{{ site.stripe.membership }}'>
                 <div class="field is-narrow">
                     <label class="label">Planning Committee</label>
                     <div class="control">
@@ -116,9 +116,9 @@ attachCheckout(
     $('#mbs'),
     'Community Forge Membership',
     validate,
-    '{{ site.stripe_webtask }}/stripe-payment/payment',
+    '{{ site.stripe.webtask }}/stripe-payment/payment',
     {
-        key: '{{ site.stripe_public_token }}',
+        key: '{{ site.stripe.token }}',
         shippingAddress: true,
         billingAddress: true,
     },

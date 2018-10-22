@@ -41,7 +41,7 @@ attachCheckout(
     validate,
     '{{ site.stripe_webtask }}/stripe-payment/payment',
     {
-        key: '{{ site.stripe_public_token }}',
+        key: '{{ site.stripe.token }}',
     },
 )
 </script>
