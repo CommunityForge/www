@@ -59,7 +59,8 @@ $(document).ready(function(){
 
     // page is now ready, initialize the calendar...
     $('#calendar-list').fullCalendar({
-      defaultView: 'listWeek',
+      defaultView: 'list',
+      duration: { days: 7 },
       header: false,
       googleCalendarApiKey: 'AIzaSyBD-vybT9628eWbcaQdocUzKFFFdckKWgY',
       events: {
