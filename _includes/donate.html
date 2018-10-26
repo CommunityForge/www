@@ -35,13 +35,15 @@ function validate(form, amount) {
     return true;
 }
 
-attachCheckout(
-    $('#form-donate'),
-    'Donate to Community Forge',
-    validate,
-    '{{ site.stripe.webtask }}/stripe-payment/payment',
-    {
-        key: '{{ site.stripe.token }}',
-    },
-)
+document.addEventListener("DOMContentLoaded", function() {
+    attachCheckout(
+        $('#form-donate'),
+        'Donate to Community Forge',
+        validate,
+        '{{ site.stripe.webtask }}/stripe-payment/payment',
+        {
+            key: '{{ site.stripe.token }}',
+        },
+    )
+});
 </script>

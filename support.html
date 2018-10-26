@@ -229,17 +229,19 @@ tag: page-support
         return true;
     }
         
-    attachCheckout(
-        $('#supportform'),
-        'Community Forge Membership',
-        validate,
-        '{{ site.stripe.webtask }}/stripe-payment/payment',
-        {
-            key: '{{ site.stripe.token }}',
-            shippingAddress: true,
-            billingAddress: true,
-        },
-    )
+    document.addEventListener("DOMContentLoaded", function() {
+        attachCheckout(
+            $('#supportform'),
+            'Community Forge Membership',
+            validate,
+            '{{ site.stripe.webtask }}/stripe-payment/payment',
+            {
+                key: '{{ site.stripe.token }}',
+                shippingAddress: true,
+                billingAddress: true,
+            },
+        )
+    }
     </script>
 </section>
 
