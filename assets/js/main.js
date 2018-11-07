@@ -76,10 +76,17 @@ $(document).ready(function(){
                     let e = events[i];
                     if (e.start > now) {
                         e.description = e.description || '';
+                        var endFmt;
+                        if (e.end - e.start > 24*60*60*1000) {
+                            endFmt = "MMM Do, hmma";
+                        } else {
+                            endFmt = "h:mma";
+                        }
                         let template = $(`
                           <div class="upcomingevent">
                             <h1 class="title is-3"><a href="${e.url}">${e.title}</a></h1>
-                            <span class="event-date">${e.start.format("MMM Do")}</span>
+                            <span class="event-date">${e.start.format("MMM Do, h:mma")} - 
+                                                     ${e.end.format(endFmt)}</span>
                             <hr class="shorty">
                             <p>${e.description}</p>
                           </div>`)[0];
