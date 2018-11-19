@@ -60,7 +60,7 @@ $(document).ready(function(){
     // page is now ready, initialize the calendar...
     $('#calendar-list').fullCalendar({
       defaultView: 'list',
-      duration: { days: 7 },
+      duration: { weeks: 1 },
       header: false,
       googleCalendarApiKey: 'AIzaSyBD-vybT9628eWbcaQdocUzKFFFdckKWgY',
       events: {
@@ -70,6 +70,7 @@ $(document).ready(function(){
           if (!loading && $('#upcomingevent_section').length) {
               window.setTimeout(function() {
                 let events = $('#calendar-list').fullCalendar('clientEvents');
+                let eventsAdded = 0;
                 events.sort((a, b) => a.start > b.start);
                 let now = new Date();
                 for (var i in events) {
@@ -91,7 +92,17 @@ $(document).ready(function(){
                             <p>${e.description}</p>
                           </div>`)[0];
                         mySiema.append(template);
+                        eventsAdded += 1;
                     }
+                }
+                if (eventsAdded == 0) {
+                    let template = $(`
+                      <div class="upcomingevent">
+                        <h1 class="title is-3">No Events This Week</h1>
+                        <hr class="shorty">
+                        <p>Check out <a href="/events">our events page</a> to see other things are going on at Community Forge!</p>
+                      </div>`)[0];
+                    mySiema.append(template);
                 }
                 mySiema.remove(0);
               }, 250);
