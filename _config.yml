@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Community Forge
-email: info@forge.community
+email: hello@forge.community
 description: >- # this means to ignore newlines until "baseurl:"
   Grow an inclusive Community Space dedicated to creating opportunities for
   Wilkinsburg
