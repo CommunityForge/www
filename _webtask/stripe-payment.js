@@ -76,9 +76,13 @@ productPreprocess['prod_ChLIFCpTiz59TQ'] = function(res, args) {
 
     if ((!params.reocurring &&    params.amount < yearly_amount_min) || 
         ( params.reocurring && 12*params.amount < yearly_amount_min)) {
+        console.log("program:", meta.program);
+        console.log("yearly min amount:", yearly_amount_min);
+        console.log("reoccuring", params.reocurring);
+        console.log("amount", params.amount);
         return errorResponse({
             res: res,
-            msg: 'You must donate more than $50 annually to become a member',
+            msg: 'You must donate more than $50 annually to become a Supporter or $15 annually to become a Builder',
             code: 400,
         });
     }
@@ -152,6 +156,7 @@ async function logUserGoogleSheets(userData, GDRIVE_PRIVATE_KEY) {
         firstname: firstname,
         date: (new Date()).toLocaleDateString(),
         email: userData.email,
+        program: meta.program,
         planningcommittee: meta.planning_committee,
         shirtsize: meta.tshirt_size,
         idealuseoffunds: meta.use_of_funds,

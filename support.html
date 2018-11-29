@@ -223,7 +223,8 @@ tag: page-support
         let yearly_amount_min = (program == 'builder' ? 15 : 50);
         let yearly_amount = (reocurring * 11 + 1) * amount;
         if (yearly_amount < yearly_amount_min) {
-            notify_modal('<p>Donation amount must be at least $50 annually.</p>', 'is-danger');
+            console.log("Yearly Amount:", yearly_amount)
+            notify_modal('<p>Donation amount must be at least $50 annually to be a Supporter or $15 annually to be a builder.</p>', 'is-danger');
             return false;
         }
         return true;
