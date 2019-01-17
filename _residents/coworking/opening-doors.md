@@ -1,7 +1,7 @@
 ---
 title: Opening Doors for Youth and Families
 tag: tenant
-type: organization
+type: coworking
 website: https://www.openingdoorsforyouthfamiliesinc.com/
 img: /assets/img/tenants/opening_doors.jpg
 ---
