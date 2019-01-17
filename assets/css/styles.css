@@ -386,3 +386,8 @@ text-align: center;
   margin: 25px;
   width: auto;
 }
+
+.is-vcentered {
+  display: flex;
+  align-items: center;
+}

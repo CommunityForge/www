@@ -4,7 +4,7 @@
       {% for image in site.volunteer_photos %}
           <div class="carousel-image-container">
             <a><img src="{{site.url}}/{{image.image_path}}" alt="{{image.title}}" class="carousel-image"></a>
-            <div class="carousel-image-overlay"><h1 class="title is-5">{{image.title}}</h1></div>
+            <div class="carousel-image-overlay is-vcentered"><h1 class="title is-5">{{image.title}}</h1></div>
 
           </div>
       {% endfor %}
@@ -17,5 +17,5 @@
         duration: 500,
         loop: true,
       });
-      setInterval(() => volunteers.next(), 3000);
+      setInterval(() => volunteers.next(), 8000);
     </script>
