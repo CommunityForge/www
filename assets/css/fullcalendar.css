@@ -4,6 +4,7 @@
  * (c) 2018 Adam Shaw
  */
 .fc {
+  color: #4a4a4a;
   direction: ltr;
   text-align: left; }
 
@@ -1246,6 +1247,7 @@ be a descendant of the grid when it is being dragged.
 
 /* event list items */
 .fc-list-item.fc-has-url {
+  background: #eee;
   cursor: pointer;
   /* whole row will be clickable */ }
 
