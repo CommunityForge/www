@@ -387,7 +387,10 @@ text-align: center;
   width: auto;
 }
 
-.is-vcentered {
-  display: flex;
-  align-items: center;
+
+.is-section-image {
+    text-align: center;
+}
+.is-section-image > img {
+    max-height: 50vh;
 }

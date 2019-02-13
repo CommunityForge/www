@@ -85,3 +85,8 @@ a.navbar-item:hover {
 .tile{
   flex-wrap: wrap;
 }
+
+.help {
+    font-size: 1.1rem;
+}
+}

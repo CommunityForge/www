@@ -85,7 +85,7 @@ $(document).ready(function(){
                         }
                         let template = $(`
                           <div class="upcomingevent">
-                            <h1 class="title is-3"><a href="${e.url}">${e.title}</a></h1>
+                            <h1 class="title is-3"><a href="${e.url}" target="_blank">${e.title}</a></h1>
                             <span class="event-date">${e.start.format("MMM Do, h:mma")} - 
                                                      ${e.end.format(endFmt)}</span>
                             <hr class="shorty">
