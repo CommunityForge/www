@@ -394,3 +394,11 @@ text-align: center;
 .is-section-image > img {
     max-height: 50vh;
 }
+
+.space-carousel{
+    width: 60%;
+}
+.space-display a {
+    color: rgba(82, 105, 109, 1);
+    text-decoration: underline;
+}

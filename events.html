@@ -12,15 +12,121 @@ tag: page-events
     </p>
   </div>
 </section>
+
+
 {% include common/calendar_month.html %}
+
+
 <section class="section">
   <div class="container has-text-centered">
     <h1 class="title-head">Booking Your Event</h1>
-    <p>
-      We have been happy to host many different and wonderful events since opening in January 2018, but due to high demand and limited staff capacity, we are currently suspending all new external bookings until 2019.  We will continue to host public events that have been scheduled and from current resident organizations. Please sign up for our mailing list to stay tuned for when we reopen bookings.  If you think your event qualifies as a program, please fill out our <a href="{{ site.url }}/contact.html">contact form</a>.
-    </p>
+      <p>
+        Community Forge’s converted school rooms have been host to bookings big
+        and small, from music festivals to workshops, community meetings to
+        film screenings, conference calls to birthday parties. 
+      </p>
+      <p>
+        We would love to host your next event or hourly booking! Community Forge has a variety of spaces to meet your needs. Please contact us at hello@forge.community, via our <a href="{{ site.url }}/contact.html">contact form</a>, or by phone (412-501-2055) to schedule a tour and learn more. See below for pricing and more information.
+      </p>
+
+      <p>
+        <img src='{{site.url}}/assets/img/events/booking.png'>
+      </p>
   </div>
 </section>
+
+
+<script>
+  function makeCarousel(selector) {
+    let carousel = new Siema({
+      selector: selector,
+      perPage: 1,
+      duration: 500,
+      loop: true,
+    });
+    setInterval(() => carousel.next(), 8000);
+  }
+</script>
+<section class="section">
+  <div class="container has-text-centered">
+    <h1 class="title-head">Rooms</h1>
+
+    {% assign spaces = site.spaces | sort:"order" %}
+    {% for space in spaces %}
+    {% unless space.hide %}
+      <article class="media space-display">
+        {% assign mod = forloop.index | modulo: 2 %}
+        {% if mod == 0 %}
+          {% assign spacedir = 'left' %}
+        {% else %}
+          {% assign spacedir = 'right' %}
+        {% endif %}
+        {% capture space_images %}
+          {% if space.images %}
+            <div class="space-carousel media-{{ spacedir }}" id='space-carousel-{{ forloop.index }}'>
+              {% for image in space.images %}
+                <a href="{{site.url}}/{{image}}">
+                  <img src="{{site.url}}/{{image}}" class='image'>
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endcapture %}
+        {% if spacedir == 'left' %}
+          {{ space_images }}
+        {% endif %}
+        <div class="media-content">
+          <div class="content">
+            <p>
+            <strong>{{ space.name }}</strong>
+            <br>
+            {% if space.capacity %}
+              capacity: 
+              <small>
+              {% for cap in space.capacity %}
+                <i>{{ cap[0] }}:</i> {{ cap[1] }}
+              {% endfor%}
+              </small>
+              <br>
+            {% endif %}
+            {{ space.content }}
+            </p>
+          </div>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              {% if space.event_example %}
+                <a href="{{ space.event_example }}">
+                  Event Examples
+                </a>
+              {% endif %}
+              {% if space.event_example and space.space_layout %}
+               &nbsp;&mdash;&nbsp; 
+              {% endif %}
+              {% if space.space_layout %}
+                <a href="{{ site.url }}/{{ space.space_layout }}">
+                  Space Layout
+                </a>
+              {% endif %}
+            </div>
+          </nav>
+        </div>
+        {% if spacedir == 'right' %}
+          {{ space_images }}
+        {% endif %}
+      </article>
+      <script>
+        makeCarousel("#space-carousel-{{forloop.index}}");
+      </script>
+
+      {% if forloop.last == false %}
+      <hr>
+      {% endif %}
+
+    {% endunless %}
+    {% endfor %}
+  </div>
+</section>
+
 {% comment %}
 {% include common/booking_form.html %}
 {% endcomment %}
