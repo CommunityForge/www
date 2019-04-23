@@ -402,3 +402,8 @@ text-align: center;
     color: rgba(82, 105, 109, 1);
     text-decoration: underline;
 }
+
+.navbar-special {
+    color: #f44 !important;
+    font-weight: bold;
+}
