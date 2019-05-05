@@ -5,7 +5,7 @@ capacity:
     seated: 40
     standing: 60
 event_example: https://drive.google.com/open?id=1A99eK5P2vSRSWbKU-AbTyHQsni5FtoEF
-space_layout: /assets/spaces/library/CF-RoomLayout-Library.pdf
+space_layout: /assets/spaces/library/CF-Event Layouts-LIBRARY.pdf
 images:
     - /assets/spaces/library/Library-1.jpg
     - /assets/spaces/library/Library-2.jpg
