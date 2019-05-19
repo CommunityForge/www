@@ -4,7 +4,7 @@ name: Seminar Room
 capacity:
     seated: 25
     standing: 30
-space_layout: /assets/spaces/after_school/CF-RoomLayout-SeminarRoom.pdf
+space_layout: /assets/spaces/seminar/CF-RoomLayout-SeminarRoom.pdf
 images:
     - /assets/spaces/seminar/Seminar Room-2.jpg
     - /assets/spaces/seminar/Seminar Room-1.jpg
