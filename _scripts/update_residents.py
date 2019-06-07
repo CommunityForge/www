@@ -1,8 +1,10 @@
 import csv
 import os
 import string
+import random
 import argparse
 import requests
+import multiprocessing
 from urllib.parse import (urlparse, parse_qs)
 
 
@@ -44,14 +46,16 @@ def get_image(data, img_dir):
         return '/assets/img/tennant_placeholder.jpg'
     url = f"https://drive.google.com/uc?export=download&id={fileid}"
     r = requests.get(url, allow_redirects=True)
-    open('tmpimg', 'wb').write(r.content)
+    fname = "".join(random.sample(string.ascii_letters, 12))
+    open(fname, 'wb').write(r.content)
     outfile = _filename(data, img_dir, 'jpg')
-    os.system(f'convert tmpimg -flatten -quality 70 -resize 600x400 -gravity center -background white -extent 600x400 "{outfile}"')
-    os.unlink('tmpimg')
+    os.system(f'convert {fname} -flatten -quality 70 -resize 600x400 -gravity center -background white -extent 600x400 "{outfile}"')
+    os.unlink(fname)
     return outfile
 
 
-def create_resident_file(data, template, file_dir, img_dir):
+def create_resident_file(args):
+    (data, template, file_dir, img_dir) = args
     print(f"Working on: {data['Name']}")
     data['Type'] = data['Type'].lower()
     data['image'] = get_image(data, img_dir)
@@ -67,10 +71,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     data = load_csv(args.csv_file)
     template = args.template_file.read()
-    for d in data:
-        create_resident_file(
-            d,
-            template,
-            args.residents_location,
-            args.image_location,
-        )
+    pool = multiprocessing.Pool(4)
+    args = [(d, template, args.residents_location, args.image_location)
+            for d in data]
+    pool.map(create_resident_file, args)
