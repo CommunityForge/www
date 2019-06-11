@@ -4,7 +4,7 @@ tag: tenant
 type: organization
 website: http://www.uwebtv.com
 
-img:  /assets/img/tennant_placeholder.jpg
+img:  assets/img/tenants/organization/studio_east.jpg
 ---
 
 Studio East is one stop shop for all your marketing needs, including video, photography
