@@ -1,7 +1,7 @@
 ---
-title: Wilkinsburg Athletic Association
+title: Lisa Middleman Campaign
 tag: tenant
-type: coworking
+type: organization
 website: 
 img:  /assets/img/tennant_placeholder.jpg
 ---
