@@ -1,7 +1,7 @@
 ---
-title: Lisa Middleman Campaign
+title: Maria Bethel
 tag: tenant
-type: organization
+type: coworking
 website: 
 img:  /assets/img/tennant_placeholder.jpg
 ---
