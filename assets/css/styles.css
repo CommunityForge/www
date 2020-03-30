@@ -3,6 +3,27 @@
     filter: blur(2px);
 }
 
+.special-announcement {
+    background: #FF5B48;
+}
+
+.announcement-content {
+    text-align: center;
+    padding: 1em 4em;
+    color: white;
+    font-size: 1.3em;
+}
+
+.announcement-content a{
+    color:blue;
+    text-decoration: underline;
+}
+
+.announcement-content a:visited{
+    color:blue;
+}
+
+
 #introduction {
   background: #F5F5F5;
 }
