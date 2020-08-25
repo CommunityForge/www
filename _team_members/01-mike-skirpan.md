@@ -1,8 +1,6 @@
 ---
 name: Mike Skirpan
 title: Executive Director and <br>Co-Founder
-image: /assets/img/team/team-mike-skirpan.jpg
+image: /assets/img/team/team_mws.jpg
 tag: team
 ---
-Mike Skirpan
-Executive Director and Co-founder
