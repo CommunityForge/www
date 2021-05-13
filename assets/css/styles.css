@@ -38,13 +38,13 @@ p {
 }
 
 a {
-  color: rgba(82, 105, 109, 0.5);
+  color: rgba(249, 224, 24, 0.5);
 }
 a:visited {
-  color: rgba(82, 105, 109, 0.5);
+  color: rgba(249, 224, 24, 0.5);
 }
 a:hover {
-  color: rgba(82, 105, 109, 1);
+  color: rgba(249, 224, 24, 1);
 }
 
 #anchor {
