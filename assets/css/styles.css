@@ -82,6 +82,7 @@ p {
 .social-media a {
   background-color: transparent;
   color: rgba(82, 105, 109, 0.5);
+  text-decoration: none;
 }
 
 .social-media a:visited {
