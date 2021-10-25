@@ -1,0 +1,150 @@
+---
+title: "Membership and Rentals"
+layout: default
+tag: page-leasing
+---
+
+
+<section class="section">
+  <div class="container">
+    <h1 class="title-head has-text-centered">Become a Member</h1>
+    <p class="has-text-centered">
+    <strong>Come be part of our network!</strong> Community Forge is now a full-service business support center and co-working space. Our facility undergoing a makeover and is preparing to launch a large work lounge in our atrium, 4 new meeting spaces, a small workshop room, a seminar room, and a multimedia studio. We also now offer business coaching to all members. Whether you are a first-time entrepreneur, a growing small business, or someone who wants to support our business community, we have a place for you. Read up on our different membership levels below.
+    <br><br>
+    <a style="font-size:1.5em" href="https://docs.google.com/forms/d/e/1FAIpQLSed2RoZGBLkilp5uvklPPD_OAr71leqoveQHy1OhZ9krfQbiQ/viewform?usp=sf_link">---> Click here to fill out our intake form, the first step to becoming a member <---</a>
+    <br><br>
+    </p>
+    <div class="columns is-vcentered">
+      <div class='column'>
+          <img src='{{site.url}}/assets/img/hub/hub-community.png'>
+      </div>
+      <div class='column'>
+          <img src='{{site.url}}/assets/img/hub/hub-start.png'>
+      </div>
+    </div>
+    <div class="columns is-vcentered">
+      <div class='column'>
+          <img src='{{site.url}}/assets/img/hub/hub-grow.png'>
+      </div>
+      <div class='column'>
+          <img src='{{site.url}}/assets/img/hub/anchor.png'>
+      </div>
+    </div>
+    <p>
+     If you have questions, please email us at hello@forge.community, write us through our <a href="{{ site.url }}/contact.html">contact form</a>, or call us at (412-501-2055) to schedule a tour and learn more.
+    </p>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <h1 class="title-head">Event Rentals</h1>
+      <p>
+        Community Forge’s converted school rooms have been host to bookings big
+        and small, from music festivals to workshops, community meetings to
+        film screenings, conference calls to birthday parties.
+      </p><br>
+      <div class="special-announcement">
+          <div class="announcement-content">
+              <b>Due to COVID-19:</b> Community Forge is not booking events at this time. Please check back in early 2022 for updates.
+          </div>
+      </div>
+
+  </div>
+</section>
+
+
+<script>
+  function makeCarousel(selector) {
+    let carousel = new Siema({
+      selector: selector,
+      perPage: 1,
+      duration: 500,
+      loop: true,
+    });
+    setInterval(() => carousel.next(), 8000);
+  }
+</script>
+<section class="section">
+  <div class="container has-text-centered">
+    <h1 class="title-head">Rooms</h1>
+
+    {% assign spaces = site.spaces | sort:"order" %}
+    {% for space in spaces %}
+    {% unless space.hide %}
+      <article class="media space-display">
+        {% assign mod = forloop.index | modulo: 2 %}
+        {% if mod == 0 %}
+          {% assign spacedir = 'left' %}
+        {% else %}
+          {% assign spacedir = 'right' %}
+        {% endif %}
+        {% capture space_images %}
+          {% if space.images %}
+            <div class="space-carousel media-{{ spacedir }}" id='space-carousel-{{ forloop.index }}'>
+              {% for image in space.images %}
+                <a href="{{site.url}}/{{image}}">
+                  <img src="{{site.url}}/{{image}}" class='image'>
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endcapture %}
+        {% if spacedir == 'left' %}
+          {{ space_images }}
+        {% endif %}
+        <div class="media-content">
+          <div class="content">
+            <p>
+            <strong>{{ space.name }}</strong>
+            <br>
+            {% if space.capacity %}
+              capacity:
+              <small>
+              {% for cap in space.capacity %}
+                <i>{{ cap[0] }}:</i> {{ cap[1] }}
+              {% endfor%}
+              </small>
+              <br>
+            {% endif %}
+            {{ space.content }}
+            </p>
+          </div>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              {% if space.event_example %}
+                <a href="{{ space.event_example }}">
+                  Event Examples
+                </a>
+              {% endif %}
+              {% if space.event_example and space.space_layout %}
+               &nbsp;&mdash;&nbsp;
+              {% endif %}
+              {% if space.space_layout %}
+                <a href="{{ site.url }}/{{ space.space_layout }}">
+                  Space Layout
+                </a>
+              {% endif %}
+            </div>
+          </nav>
+        </div>
+        {% if spacedir == 'right' %}
+          {{ space_images }}
+        {% endif %}
+      </article>
+      <script>
+        makeCarousel("#space-carousel-{{forloop.index}}");
+      </script>
+
+      {% if forloop.last == false %}
+      <hr>
+      {% endif %}
+
+    {% endunless %}
+    {% endfor %}
+  </div>
+</section>
+
+{% comment %}
+{% include common/booking_form.html %}
+{% endcomment %}

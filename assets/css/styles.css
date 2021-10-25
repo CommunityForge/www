@@ -37,13 +37,12 @@ p {
     text-justify: auto;
 }
 
-a {
+#video-section a {
   color: rgba(249, 224, 24, 0.5);
+  text-decoration: none;
 }
-a:visited {
-  color: rgba(249, 224, 24, 0.5);
-}
-a:hover {
+
+#video-section a:hover {
   color: rgba(249, 224, 24, 1);
 }
 

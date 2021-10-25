@@ -1,6 +1,7 @@
 .button.is-primary {
   margin-top:25px;
   background-color: #52696D;
+  text-decoration: none;
 }
 
 .button.is-primary:hover {
@@ -23,6 +24,7 @@
 a.navbar-item {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
 }
 a.navbar-item:visited {
   background-color: transparent;
@@ -40,6 +42,18 @@ a.navbar-item:hover {
   border-bottom: #52696d 3px;
   border-bottom-style: solid;
   background-color: #f5f5f5;
+}
+
+a {
+  color: #153154;
+  opacity: 1;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #153154;
+  opacity: .5;
+
 }
 
 .xmedia-icons {

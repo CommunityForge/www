@@ -1,4 +1,4 @@
 ---
-image_path: /assets/img/volunteers/volunteers_paint.jpg
-title: Volunteer Hadley Dean helping out in our first months to paint classrooms with Board Member Travis Alvarez
+image_path: /assets/img/volunteers/forge-fest-producers.jpg
+title: Big Up to Jacquea Mae and Jordan Montgomery, our co-producers for Forge Fest and artist members of our community.
 ---

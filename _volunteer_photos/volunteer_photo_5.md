@@ -1,4 +1,4 @@
 ---
-image_path: /assets/img/volunteers/volunteers_bbq.JPG
-title: Ira Cambric went beyond being an amazing dance instructor and helped us out at our annual BBQ in August.
+image_path: /assets/img/volunteers/volunteers_floors.jpg
+title: We rely on volunteers to help make Johnston beautiful. Thanks to Kurt and Mike for putting in the kitchenette floor!
 ---
