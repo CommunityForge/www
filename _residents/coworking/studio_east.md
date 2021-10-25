@@ -1,7 +1,7 @@
 ---
 title: Studio East
 tag: tenant
-type: organization
+type: coworking
 website: http://www.uwebtv.com
 
 img:  assets/img/tenants/organization/studio_east.jpg

@@ -1,9 +1,7 @@
 ---
-title: TTS Coaching & Developing, LLC
+title: Brown Mamas
 tag: tenant
 type: coworking
-website: 
+website:
 img:  /assets/img/tennant_placeholder.jpg
 ---
-
-

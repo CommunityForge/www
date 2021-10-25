@@ -47,7 +47,6 @@ a.navbar-item:hover {
 a {
   color: #153154;
   opacity: 1;
-  text-decoration: underline;
 }
 
 a:hover {
@@ -102,5 +101,4 @@ a:hover {
 
 .help {
     font-size: 1.1rem;
-}
 }
