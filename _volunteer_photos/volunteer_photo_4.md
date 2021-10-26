@@ -1,4 +1,4 @@
 ---
-image_path: /assets/img/volunteers/volunteers_WYP_construction.JPG
-title: Shout out to Wilkinsburg Youth Project who worked with us all summer.  Thanks to them, we now have a telescope on the roof!
+image_path: /assets/img/volunteers/board_retreat.png
+title: The incredible board of our non-profit, Locally Grown, out on the playground brainstorming at the annual retreat!
 ---
