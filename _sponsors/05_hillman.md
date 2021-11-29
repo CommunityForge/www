@@ -1,4 +1,4 @@
 ---
 title: Hillman Family Foundation
-image: /assets/img/sponsors/Hillman-logo.png
+image: /assets/img/sponsors/Hillman-Logo.png
 ---
