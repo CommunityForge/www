@@ -1,7 +1,7 @@
 <section id="reports-section" class="section is-centered-form">
   <div class="container">
     <h1 class="title-head" id='annualreports'>Annual Reports</h1>
-    {% for report in site.tags['report'] limit:3 %}
+    {% for report in site.tags['report'] limit:5 %}
       {% if report.pdf %}
         <a href="{{ site.url }}/assets/pdf/{{ report.pdf }}" target="_blank">
           <h1 class="title is-4" style="color:#fff;">
