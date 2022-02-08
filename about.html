@@ -21,8 +21,8 @@ In 2020, Community Forge began its next chapter, moving under the auspices of it
 
 {% include ourteam_section.html %}
 
-<section class="section has-text-centered">
-  <div class="container">
+<section class="section">
+  <div class="container has-text-centered is-vcentered">
     <h1 class="title-head">Press</h1>
     {% for post in site.tags['press'] %}
       <h1 class="title is-5 press-title">{{ post.title }}</h1>
@@ -31,7 +31,7 @@ In 2020, Community Forge began its next chapter, moving under the auspices of it
           {% else %}
           <a class="button is-primary" href="{{ post.link }}" target="_blank">Read More</a>
           {% endif %}
-      <time datetime="{{ post.date }}">{{ post.date | date_to_string}}</time>
+      <time class="column is-vcentered" datetime="{{ post.date }}">{{ post.date | date_to_string}}</time>
       <hr>
     {% endfor %}
   </div>
