@@ -1,6 +1,6 @@
 {
  "dependencies": {
-   "express": "4.16.4",
+   "express": "4.19.2",
    "webtask-tools": "3.4.0",
    "body-parser": "1.18.3",
    "google-spreadsheet": "2.0.6",
